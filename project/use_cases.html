@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Розроблення функціональних вимог до системи | Курсова робота</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    
+    <meta name="description" content="Документація для курсової роботи">
+    
+    <link rel="preload" href="/assets/css/0.styles.9f84806b.css" as="style"><link rel="preload" href="/assets/js/app.16b6df24.js" as="script"><link rel="preload" href="/assets/js/2.79c8b5da.js" as="script"><link rel="preload" href="/assets/js/1.2502fb65.js" as="script"><link rel="preload" href="/assets/js/36.3055289d.js" as="script"><link rel="prefetch" href="/assets/js/10.acd366ff.js"><link rel="prefetch" href="/assets/js/11.2689ba83.js"><link rel="prefetch" href="/assets/js/12.137a9576.js"><link rel="prefetch" href="/assets/js/13.786f62b7.js"><link rel="prefetch" href="/assets/js/14.8a6463d3.js"><link rel="prefetch" href="/assets/js/15.9f59e3b5.js"><link rel="prefetch" href="/assets/js/16.47e1d84d.js"><link rel="prefetch" href="/assets/js/17.368b07ea.js"><link rel="prefetch" href="/assets/js/18.8241d824.js"><link rel="prefetch" href="/assets/js/19.56a0d05b.js"><link rel="prefetch" href="/assets/js/20.8f60a139.js"><link rel="prefetch" href="/assets/js/21.e21ffad3.js"><link rel="prefetch" href="/assets/js/22.eb62c738.js"><link rel="prefetch" href="/assets/js/23.b2b67d98.js"><link rel="prefetch" href="/assets/js/24.99e8d848.js"><link rel="prefetch" href="/assets/js/25.bf9b0914.js"><link rel="prefetch" href="/assets/js/26.d552a4be.js"><link rel="prefetch" href="/assets/js/27.70519e16.js"><link rel="prefetch" href="/assets/js/28.95eb6d96.js"><link rel="prefetch" href="/assets/js/29.0c1bb557.js"><link rel="prefetch" href="/assets/js/3.8af8fcbf.js"><link rel="prefetch" href="/assets/js/30.8063a5e8.js"><link rel="prefetch" href="/assets/js/31.51c088ab.js"><link rel="prefetch" href="/assets/js/32.e1bbe1d6.js"><link rel="prefetch" href="/assets/js/33.093d45dc.js"><link rel="prefetch" href="/assets/js/34.cf35852e.js"><link rel="prefetch" href="/assets/js/35.a5bedcab.js"><link rel="prefetch" href="/assets/js/4.a861951e.js"><link rel="prefetch" href="/assets/js/5.c3d19108.js"><link rel="prefetch" href="/assets/js/6.87538154.js"><link rel="prefetch" href="/assets/js/7.91537c65.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.6fed1ae2.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.9f84806b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Курсова робота</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="розроблення-функціональних-вимог-до-системи"><a href="#розроблення-функціональних-вимог-до-системи" class="header-anchor">#</a> Розроблення функціональних вимог до системи</h1> <h2 id="загальна-схема"><a href="#загальна-схема" class="header-anchor">#</a> Загальна схема</h2> <div class="language-plantuml extra-class"><pre class="language-plantuml"><code>
+<span class="token delimiter punctuation">@startuml</span>
+<span class="token keyword">skinparam</span> noteFontColor white
+
+<span class="token keyword">actor</span> <span class="token string">&quot;Робітник&quot;</span> <span class="token keyword">as</span> Collaborator
+
+
+<span class="token keyword">usecase</span> <span class="token string">&quot;&lt;b&gt;SignUp&lt;/b&gt;\nЗареєструватися&quot;</span> <span class="token keyword">as</span> SignUp
+<span class="token keyword">usecase</span> <span class="token string">&quot;&lt;b&gt;Login&lt;/b&gt;\nВвхід у систему&quot;</span> <span class="token keyword">as</span> Login
+<span class="token keyword">usecase</span> <span class="token string">&quot;&lt;b&gt;ManageTasks&lt;/b&gt;\nУправління завданнями&quot;</span> <span class="token keyword">as</span> ManageTasks
+<span class="token keyword">usecase</span> <span class="token string">&quot;&lt;b&gt;EditUser&lt;/b&gt;\nРедагування даних користувача&quot;</span> <span class="token keyword">as</span> EditUser
+
+
+Collaborator <span class="token arrow operator">-r-&gt;</span> SignUp
+Collaborator <span class="token arrow operator">-u-&gt;</span> Login
+Collaborator <span class="token arrow operator">-l-&gt;</span> ManageTasks
+Collaborator <span class="token arrow operator">-u-&gt;</span> EditUser
+
+
+
+
+<span class="token keyword">note</span> bottom of Collaborator  <span class="token color symbol">#4e4e4e</span>
+
+   Робітник може повною мірою керувати тільки&lt;b&gt;власними завданнями&lt;/b&gt;
+   та на призначених йому завданнях він має можливість тільки
+   &lt;b&gt;змінювати статус&lt;/b&gt; <span class="token punctuation">(</span>t<span class="token arrow operator">o-</span>do/in progress/done/in rewiew<span class="token punctuation">)</span>.
+   &lt;b&gt;Фільтрувати&lt;/b&gt; та &lt;b&gt;коментувати&lt;/b&gt; робітник може повною мірою &lt;b&gt;всі&lt;/b&gt;
+   &lt;b&gt;завдання проекту&lt;/b&gt;.
+   
+
+<span class="token keyword">end note</span>
+
+<span class="token keyword">actor</span> <span class="token string">&quot;Тімлід&quot;</span> <span class="token keyword">as</span> Teamlead
+
+<span class="token keyword">usecase</span> <span class="token string">&quot;&lt;b&gt;ProjectManage&lt;/b&gt;\nКерувати проектом&quot;</span> <span class="token keyword">as</span> ProjectManage
+
+
+
+Teamlead <span class="token arrow operator">-&gt;</span> ProjectManage
+Teamlead <span class="token arrow operator">-u-|&gt;</span> Collaborator
+
+<span class="token keyword">actor</span> <span class="token string">&quot;Адміністратор системи&quot;</span> <span class="token keyword">as</span> Admin
+
+<span class="token keyword">usecase</span> <span class="token string">&quot;&lt;b&gt;DataManage&lt;/b&gt;\nКерувати даними системи&quot;</span> <span class="token keyword">as</span> DataManage
+
+
+Admin <span class="token arrow operator">--&gt;</span> DataManage
+
+Admin <span class="token arrow operator">-u-|&gt;</span> Teamlead
+<span class="token delimiter punctuation">@enduml</span>
+
+</code></pre></div><h2 id="робітник"><a href="#робітник" class="header-anchor">#</a> Робітник</h2> <div class="language-plantuml extra-class"><pre class="language-plantuml"><code><span class="token delimiter punctuation">@startuml</span>
+<span class="token keyword">skinparam</span> noteFontColor white
+
+<span class="token keyword">actor</span> <span class="token string">&quot;Робітник&quot;</span> <span class="token keyword">as</span> Collaborator
+
+<span class="token keyword">usecase</span> <span class="token string">&quot;&lt;b&gt;SignUp&lt;/b&gt;\nРеєстрація&quot;</span> <span class="token keyword">as</span> SignUp
+<span class="token keyword">usecase</span> <span class="token string">&quot;&lt;b&gt;UserSignUp&lt;/b&gt;\nРеєстрація користувача&quot;</span> <span class="token keyword">as</span> UserSignUp
+<span class="token keyword">usecase</span> <span class="token string">&quot;&lt;b&gt;LogIn&lt;/b&gt;\nВхід&quot;</span> <span class="token keyword">as</span> Login
+<span class="token keyword">usecase</span> <span class="token string">&quot;&lt;b&gt;UserLogIn&lt;/b&gt;\nВхід користувача&quot;</span> <span class="token keyword">as</span> UserLogIn
+<span class="token keyword">usecase</span> <span class="token string">&quot;&lt;b&gt;EditUser&lt;/b&gt;\nРедагувати дані користувача&quot;</span> <span class="token keyword">as</span> EditUser
+<span class="token keyword">usecase</span> <span class="token string">&quot;&lt;b&gt;ManageTasks&lt;/b&gt;\nКерувати завданнями&quot;</span> <span class="token keyword">as</span> ManageTasks
+<span class="token keyword">usecase</span> <span class="token string">&quot;&lt;b&gt;CreateTask&lt;/b&gt;\nСтворити завдання&quot;</span> <span class="token keyword">as</span> CreateTask
+<span class="token keyword">usecase</span> <span class="token string">&quot;&lt;b&gt;EditTask&lt;/b&gt;\nРедагувати завдання&quot;</span> <span class="token keyword">as</span> EditTask
+<span class="token keyword">usecase</span> <span class="token string">&quot;&lt;b&gt;DeleteTask&lt;/b&gt;\nВидалити завдання&quot;</span> <span class="token keyword">as</span> DeleteTask
+<span class="token keyword">usecase</span> <span class="token string">&quot;&lt;b&gt;FilterTask&lt;/b&gt;\nВідфільтрувати завдання&quot;</span> <span class="token keyword">as</span> FilterTask
+<span class="token keyword">usecase</span> <span class="token string">&quot;&lt;b&gt;CommentTask&lt;/b&gt;\nКоментувати завдання&quot;</span> <span class="token keyword">as</span> CommentTask
+
+Collaborator <span class="token arrow operator">-l-&gt;</span> SignUp
+SignUp <span class="token arrow operator">&lt;.d.</span> UserSignUp<span class="token punctuation">:</span>extends
+Collaborator <span class="token arrow operator">-r-&gt;</span> Login
+Login <span class="token arrow operator">&lt;.d.</span> UserLogIn<span class="token punctuation">:</span>extends
+Collaborator <span class="token arrow operator">--d-&gt;</span> EditUser
+Collaborator <span class="token arrow operator">-u-&gt;</span> ManageTasks
+ManageTasks <span class="token arrow operator">&lt;.u.</span> CommentTask<span class="token punctuation">:</span>extends
+ManageTasks <span class="token arrow operator">&lt;.u.</span> FilterTask<span class="token punctuation">:</span>extends
+ManageTasks <span class="token arrow operator">&lt;.u.</span> DeleteTask<span class="token punctuation">:</span>extends
+ManageTasks <span class="token arrow operator">&lt;.u.</span> EditTask<span class="token punctuation">:</span>extends
+ManageTasks<span class="token arrow operator">&lt;.u.</span> CreateTask<span class="token punctuation">:</span>extends
+
+<span class="token keyword">note</span> bottom of Collaborator <span class="token color symbol">#4e4e4e</span>
+
+    Робітник може повною мірою керувати тільки&lt;b&gt;власними завданнями&lt;/b&gt;
+   та на призначених йому завданнях він має можливість тільки
+   &lt;b&gt;змінювати статус&lt;/b&gt; <span class="token punctuation">(</span>t<span class="token arrow operator">o-</span>do/in progress/done/in rewiew<span class="token punctuation">)</span>.
+   &lt;b&gt;Фільтрувати&lt;/b&gt; та &lt;b&gt;коментувати&lt;/b&gt; робітник може повною мірою &lt;b&gt;всі&lt;/b&gt;
+   &lt;b&gt;завдання проекту&lt;/b&gt;.
+   
+
+<span class="token keyword">end note</span>
+<span class="token delimiter punctuation">@enduml</span>
+
+</code></pre></div><h2 id="тімлід"><a href="#тімлід" class="header-anchor">#</a> Тімлід</h2> <div class="language-plantuml extra-class"><pre class="language-plantuml"><code><span class="token delimiter punctuation">@startuml</span>
+top to bottom direction
+
+<span class="token keyword">actor</span> <span class="token string">&quot;Тімлід&quot;</span> <span class="token keyword">as</span> Lead
+
+<span class="token keyword">usecase</span> <span class="token string">&quot;&lt;b&gt;CreateProject&lt;/b&gt;\nСтворити проект&quot;</span> <span class="token keyword">as</span> CreateProject
+<span class="token keyword">usecase</span> <span class="token string">&quot;&lt;b&gt;DeleteProject&lt;/b&gt;\nВидалити проект&quot;</span> <span class="token keyword">as</span> DeleteProject
+<span class="token keyword">usecase</span> <span class="token string">&quot;&lt;b&gt;EditProject&lt;/b&gt;\nРедагувати проект&quot;</span> <span class="token keyword">as</span> EditProject
+<span class="token keyword">usecase</span> <span class="token string">&quot;&lt;b&gt;ProjectManage&lt;/b&gt;\nКерувати проєктом&quot;</span> <span class="token keyword">as</span> ProjectManage
+
+CreateProject <span class="token arrow operator">.d.&gt;</span> ProjectManage<span class="token punctuation">:</span> extends
+DeleteProject <span class="token arrow operator">.d.&gt;</span> ProjectManage<span class="token punctuation">:</span> extends
+EditProject <span class="token arrow operator">.d.&gt;</span> ProjectManage<span class="token punctuation">:</span> extends
+
+Lead <span class="token arrow operator">-u-&gt;</span> ProjectManage
+<span class="token delimiter punctuation">@enduml</span>
+</code></pre></div><h2 id="адміністратор"><a href="#адміністратор" class="header-anchor">#</a> Адміністратор</h2> <div class="language-plantuml extra-class"><pre class="language-plantuml"><code><span class="token delimiter punctuation">@startuml</span>
+<span class="token keyword">actor</span> <span class="token string">&quot;Адміністратор системи&quot;</span> <span class="token keyword">as</span> Admin
+<span class="token keyword">usecase</span> <span class="token string">&quot;&lt;b&gt;DataManage&lt;/b&gt;\nКерувати даними системи&quot;</span> <span class="token keyword">as</span> DataManage
+<span class="token keyword">usecase</span> <span class="token string">&quot;&lt;b&gt;BanUser&lt;/b&gt;\nЗаблокувати користувача&quot;</span> <span class="token keyword">as</span> BanUser
+<span class="token keyword">usecase</span> <span class="token string">&quot;&lt;b&gt;UnBanUser&lt;/b&gt;\nРозблокувати користувача&quot;</span> <span class="token keyword">as</span> UnBanUser
+
+Admin <span class="token arrow operator">-d-&gt;</span> DataManage
+BanUser <span class="token arrow operator">.u.&gt;</span> DataManage<span class="token punctuation">:</span>extends
+UnBanUser <span class="token arrow operator">.u.&gt;</span> DataManage<span class="token punctuation">:</span>extends
+<span class="token delimiter punctuation">@enduml</span>
+</code></pre></div><h2 id="сценеріі"><a href="#сценеріі" class="header-anchor">#</a> Сценерії</h2> <table><tr><th>ID</th> <th id="EditUser"><code>EditUser</code></th></tr> <tr><th>Назва</th> <td>Редагувати користувача</td></tr> <tr><th>Учасники</th> <td>Користувач, адміністратор,система</td></tr> <tr><th>Передумови</th> <td>Користувач ввійшов до системи</td></tr> <tr><th>Результат</th> <td>Користувача успішно відредаговано</td></tr> <tr><th>Виключні ситуації</th> <td><ul><li>Користувача не знайдено (UserNotFoundException)</li> <li>Недостатні права для редагування (InsufficientPermissionsException)</li> <li>Введені дані некоректні (InvalidDataException)</li></ul></td></tr> <tr><th>Основний сценарій</th> <td><ol><li>Користувач вносить зміни в дані.</li> <li>Система перевіряє коректність введених даних (можливе InvalidDataException).</li> <li>Система зберігає зміни в даних користувача.</li></ol></td></tr></table> <center style="border-radius:4px;border:1px solid #cfd7e6;box-shadow:0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);padding:1em;"><div class="language-plantuml extra-class"><pre class="language-plantuml"><code><span class="token delimiter punctuation">@startuml</span>
+
+|Користувач|
+start<span class="token punctuation">;</span>
+<span class="token punctuation">:</span> Натискає на кнопку <span class="token string">&quot;Редагувати&quot;</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">:</span> Вносить зміни в дані<span class="token punctuation">;</span>
+
+|Система|
+<span class="token punctuation">:</span> Перевіряє коректність введених даних<span class="token punctuation">;</span>
+
+<span class="token keyword">note</span> right <span class="token color symbol">#ffaaaa</span>
+&lt;b&gt; Можливе виключення<span class="token punctuation">:</span>
+&lt;b&gt; InvalidDataException
+<span class="token keyword">end note</span>
+
+<span class="token punctuation">:</span> Зберігає зміни в даних користувача<span class="token punctuation">;</span>
+
+|Користувач|
+<span class="token punctuation">:</span> Успішно редагує дані<span class="token punctuation">;</span>
+
+stop<span class="token punctuation">;</span>
+
+<span class="token delimiter punctuation">@enduml</span>
+</code></pre></div></center> <br> <table><tr><th>ID</th> <th id="UserSignUp"><code>UserSignUp</code></th></tr> <tr><th>Назва</th> <td>Реєстрація користувача</td></tr> <tr><th>Учасники</th> <td>Користувач, система</td></tr> <tr><th>Передумови</th> <td>Користувач не зареєстрований у системі</td></tr> <tr><th>Результат</th> <td>Користувача успішно зареєстровано</td></tr> <tr><th>Виключні ситуації</th> <td><ul><li>Користувач вже існує (UserAlreadyExistsException)</li> <li>Недостатні дані (InsufficientDataException)</li> <li>Введені дані некоректні (InvalidDataException)</li></ul></td></tr> <tr><th>Основний сценарій</th> <td><ol><li>Користувач заповнює форму реєстрації.</li> <li>Система перевіряє введені дані (можливе InvalidDataException або InsufficientDataException).</li> <li>Система перевіряє, чи користувач вже існує (можливе UserAlreadyExistsException).</li> <li>Користувача успішно реєструють у системі.</li></ol></td></tr></table> <center style="border-radius:4px;border:1px solid #cfd7e6;box-shadow:0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);padding:1em;"><div class="language-plantuml extra-class"><pre class="language-plantuml"><code><span class="token delimiter punctuation">@startuml</span>
+
+|Користувач|
+start<span class="token punctuation">;</span>
+<span class="token punctuation">:</span> Заповнює форму реєстрації<span class="token punctuation">;</span>
+
+<span class="token punctuation">:</span> Натискає на кнопку <span class="token string">&quot;Зареєструватися&quot;</span><span class="token punctuation">;</span>
+
+|Система|
+<span class="token punctuation">:</span> Перевіряє введені дані<span class="token punctuation">;</span>
+
+<span class="token keyword">note</span> right <span class="token color symbol">#ffaaaa</span>
+&lt;b&gt; Можливі виключення<span class="token punctuation">:</span>
+&lt;b&gt; InvalidDataException
+&lt;b&gt; InsufficientDataException
+<span class="token keyword">end note</span>
+
+<span class="token punctuation">:</span> Перевіряє<span class="token punctuation">,</span> чи користувач вже існує<span class="token punctuation">;</span>
+
+<span class="token keyword">note</span> right <span class="token color symbol">#ffaaaa</span>
+&lt;b&gt; Можливе виключення<span class="token punctuation">:</span>
+&lt;b&gt; UserAlreadyExistsException
+<span class="token keyword">end note</span>
+
+|Користувач|
+<span class="token punctuation">:</span> Успішно реєструється у системі<span class="token punctuation">;</span>
+
+stop<span class="token punctuation">;</span>
+
+<span class="token delimiter punctuation">@enduml</span>
+</code></pre></div></center> <br> <table><tr><th>ID</th> <th id="UserLogIn"><code>UserLogIn</code></th></tr> <tr><th>Назва</th> <td>Вхід користувача</td></tr> <tr><th>Учасники</th> <td>Користувач, система</td></tr> <tr><th>Передумови</th> <td>Користувач зареєстрований у системі</td></tr> <tr><th>Результат</th> <td>Користувача успішно авторизовано</td></tr> <tr><th>Виключні ситуації</th> <td><ul><li>Користувач ввів неправильне ім'я користувача (InvalidUsernameException)</li> <li>Користувач ввів неправильний пароль (InvalidPasswordException)</li> <li>Користувач заблокований (UserBannedException)</li></ul></td></tr> <tr><th>Основний сценарій</th> <td><ol><li>Користувач вводить ім'я користувача і пароль.</li> <li>Користувач натискає на кнопку &quot;Увійти&quot;.</li> <li>Система перевіряє введені дані (можливе InvalidUsernameException або InvalidPasswordException).</li> <li>Система перевіряє статус користувача (можливе UserBannedException).</li> <li>Користувача успішно авторизують у системі.</li></ol></td></tr></table> <center style="border-radius:4px;border:1px solid #cfd7e6;box-shadow:0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);padding:1em;"><div class="language-plantuml extra-class"><pre class="language-plantuml"><code><span class="token delimiter punctuation">@startuml</span>
+
+|Користувач|
+start<span class="token punctuation">;</span>
+<span class="token punctuation">:</span> Вводить ім'я користувача і пароль<span class="token punctuation">;</span>
+
+<span class="token punctuation">:</span> Натискає на кнопку <span class="token string">&quot;Увійти&quot;</span><span class="token punctuation">;</span>
+
+|Система|
+<span class="token punctuation">:</span> Перевіряє введені дані<span class="token punctuation">;</span>
+
+<span class="token keyword">note</span> right <span class="token color symbol">#ffaaaa</span>
+&lt;b&gt; Можливі виключення<span class="token punctuation">:</span>
+&lt;b&gt; InvalidUsernameException
+&lt;b&gt; InvalidPasswordException
+<span class="token keyword">end note</span>
+
+<span class="token punctuation">:</span> Перевіряє статус користувача<span class="token punctuation">;</span>
+
+<span class="token keyword">note</span> right <span class="token color symbol">#ffaaaa</span>
+&lt;b&gt; Можливе виключення<span class="token punctuation">:</span>
+&lt;b&gt; UserBannedException
+<span class="token keyword">end note</span>
+
+|Користувач|
+<span class="token punctuation">:</span> Успішно авторизується у системі<span class="token punctuation">;</span>
+
+stop<span class="token punctuation">;</span>
+
+<span class="token delimiter punctuation">@enduml</span>
+</code></pre></div></center> <br> <table><tr><th>ID</th> <th id="CreateTask"><code>CreateTask</code></th></tr> <tr><th>Назва</th> <td>Створення задачі</td></tr> <tr><th>Учасники</th> <td>Користувач, система</td></tr> <tr><th>Передумови</th> <td>Користувач увійшов до системи</td></tr> <tr><th>Результат</th> <td>Задача успішно створена</td></tr> <tr><th>Виключні ситуації</th> <td><ul><li>Недостатні дані для створення задачі (InsufficientDataException)</li> <li>Задача з таким же ідентифікатором вже існує (TaskAlreadyExistsException)</li> <li>Недостатні права для створення задачі (InsufficientPermissionsException)</li></ul></td></tr> <tr><th>Основний сценарій</th> <td><ol><li>Користувач заповнює форму створення задачі.</li> <li>Користувач натискає на кнопку &quot;Створити задачу&quot;.</li> <li>Система перевіряє введені дані (можливе InsufficientDataException).</li> <li>Система перевіряє, чи існує задача з таким же ідентифікатором (можливе TaskAlreadyExistsException).</li> <li>Задача успішно створена у системі.</li></ol></td></tr></table> <center style="border-radius:4px;border:1px solid #cfd7e6;box-shadow:0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);padding:1em;"><div class="language-plantuml extra-class"><pre class="language-plantuml"><code><span class="token delimiter punctuation">@startuml</span>
+
+|Користувач|
+start<span class="token punctuation">;</span>
+<span class="token punctuation">:</span> Заповнює форму створення задачі<span class="token punctuation">;</span>
+
+<span class="token punctuation">:</span> Натискає на кнопку <span class="token string">&quot;Створити задачу&quot;</span><span class="token punctuation">;</span>
+
+|Система|
+<span class="token punctuation">:</span> Перевіряє введені дані<span class="token punctuation">;</span>
+
+<span class="token keyword">note</span> right <span class="token color symbol">#ffaaaa</span>
+&lt;b&gt; Можливі виключення<span class="token punctuation">:</span>
+&lt;b&gt; InsufficientDataException
+<span class="token keyword">end note</span>
+
+<span class="token punctuation">:</span> Перевіряє<span class="token punctuation">,</span> чи існує задача з таким же ідентифікатором<span class="token punctuation">;</span>
+
+<span class="token keyword">note</span> right <span class="token color symbol">#ffaaaa</span>
+&lt;b&gt; Можливе виключення<span class="token punctuation">:</span>
+&lt;b&gt; TaskAlreadyExistsException
+<span class="token keyword">end note</span>
+
+|Користувач|
+<span class="token punctuation">:</span> Успішно створює задачу<span class="token punctuation">;</span>
+
+stop<span class="token punctuation">;</span>
+
+<span class="token delimiter punctuation">@enduml</span>
+</code></pre></div></center> <br> <table><tr><th>ID</th> <th id="EditTask"><code>EditTask</code></th></tr> <tr><th>Назва</th> <td>Редагування задачі</td></tr> <tr><th>Учасники</th> <td>Користувач, система</td></tr> <tr><th>Передумови</th> <td>Користувач увійшов до системи і має доступ до задачі</td></tr> <tr><th>Результат</th> <td>Задача успішно редагована</td></tr> <tr><th>Виключні ситуації</th> <td><ul><li>Недостатні дані для редагування задачі (InsufficientDataException)</li> <li>Задача не знайдена (TaskNotFoundException)</li> <li>Недостатні права для редагування задачі (InsufficientPermissionsException)</li></ul></td></tr> <tr><th>Основний сценарій</th> <td><ol><li>Користувач вибирає задачу для редагування.</li> <li>Користувач вносить зміни до задачі.</li> <li>Користувач натискає на кнопку &quot;Зберегти зміни&quot;.</li> <li>Система перевіряє введені дані (можливе InsufficientDataException).</li> <li>Система перевіряє, чи існує задача (можливе TaskNotFoundException).</li> <li>Задача успішно редагована у системі.</li></ol></td></tr></table> <center style="border-radius:4px;border:1px solid #cfd7e6;box-shadow:0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);padding:1em;"><div class="language-plantuml extra-class"><pre class="language-plantuml"><code><span class="token delimiter punctuation">@startuml</span>
+
+|Користувач|
+start<span class="token punctuation">;</span>
+<span class="token punctuation">:</span> Вибирає задачу для редагування<span class="token punctuation">;</span>
+
+<span class="token punctuation">:</span> Вносить зміни до задачі<span class="token punctuation">;</span>
+
+<span class="token punctuation">:</span> Натискає на кнопку <span class="token string">&quot;Зберегти зміни&quot;</span><span class="token punctuation">;</span>
+
+|Система|
+<span class="token punctuation">:</span> Перевіряє введені дані<span class="token punctuation">;</span>
+
+<span class="token keyword">note</span> right <span class="token color symbol">#ffaaaa</span>
+&lt;b&gt; Можливі виключення<span class="token punctuation">:</span>
+&lt;b&gt; InsufficientDataException
+<span class="token keyword">end note</span>
+
+<span class="token punctuation">:</span> Перевіряє<span class="token punctuation">,</span> чи існує задача<span class="token punctuation">;</span>
+
+<span class="token keyword">note</span> right <span class="token color symbol">#ffaaaa</span>
+&lt;b&gt; Можливе виключення<span class="token punctuation">:</span>
+&lt;b&gt; TaskNotFoundException
+<span class="token keyword">end note</span>
+
+|Користувач|
+<span class="token punctuation">:</span> Успішно редагує задачу<span class="token punctuation">;</span>
+
+stop<span class="token punctuation">;</span>
+
+<span class="token delimiter punctuation">@enduml</span>
+</code></pre></div></center> <br> <table><tr><th>ID</th> <th id="DeleteTask"><code>DeleteTask</code></th></tr> <tr><th>Назва</th> <td>Видалення задачі</td></tr> <tr><th>Учасники</th> <td>Користувач, система</td></tr> <tr><th>Передумови</th> <td>Користувач увійшов до системи і має доступ до задачі</td></tr> <tr><th>Результат</th> <td>Задача успішно видалена</td></tr> <tr><th>Виключні ситуації</th> <td><ul><li>Задача не знайдена (TaskNotFoundException)</li> <li>Недостатні права для видалення задачі (InsufficientPermissionsException)</li></ul></td></tr> <tr><th>Основний сценарій</th> <td><ol><li>Користувач вибирає задачу для видалення.</li> <li>Користувач підтверджує видалення задачі.</li> <li>Система перевіряє, чи існує задача (можливе TaskNotFoundException).</li> <li>Задача успішно видалена з системи.</li></ol></td></tr></table> <center style="border-radius:4px;border:1px solid #cfd7e6;box-shadow:0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);padding:1em;"><div class="language-plantuml extra-class"><pre class="language-plantuml"><code><span class="token delimiter punctuation">@startuml</span>
+
+|Користувач|
+start<span class="token punctuation">;</span>
+<span class="token punctuation">:</span> Вибирає задачу для видалення<span class="token punctuation">;</span>
+
+<span class="token punctuation">:</span> Підтверджує видалення задачі<span class="token punctuation">;</span>
+
+|Система|
+<span class="token punctuation">:</span> Перевіряє<span class="token punctuation">,</span> чи існує задача<span class="token punctuation">;</span>
+
+<span class="token keyword">note</span> right <span class="token color symbol">#ffaaaa</span>
+&lt;b&gt; Можливе виключення<span class="token punctuation">:</span>
+&lt;b&gt; TaskNotFoundException
+<span class="token keyword">end note</span>
+
+|Користувач|
+<span class="token punctuation">:</span> Успішно видаляє задачу<span class="token punctuation">;</span>
+
+stop<span class="token punctuation">;</span>
+
+<span class="token delimiter punctuation">@enduml</span>
+</code></pre></div></center> <br> <table><tr><th>ID</th> <th id="FilterTask"><code>FilterTask</code></th></tr> <tr><th>Назва</th> <td>Фільтрація задач</td></tr> <tr><th>Учасники</th> <td>Користувач, система</td></tr> <tr><th>Передумови</th> <td>Користувач увійшов до системи та має доступ до списку задач</td></tr> <tr><th>Результат</th> <td>Система відображає відфільтрований список задач</td></tr> <tr><th>Виключні ситуації</th> <td><ul><li>Немає задач, що відповідають критеріям фільтрації (NoTasksFoundException)</li></ul></td></tr> <tr><th>Основний сценарій</th> <td><ol><li>Користувач вводить критерії фільтрації.</li> <li>Користувач натискає на кнопку &quot;Фільтрувати&quot;.</li> <li>Система обробляє запит на фільтрацію.</li> <li>Система перевіряє наявність задач, що відповідають критеріям (можливе NoTasksFoundException).</li> <li>Система відображає відфільтрований список задач.</li></ol></td></tr></table> <center style="border-radius:4px;border:1px solid #cfd7e6;box-shadow:0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);padding:1em;"><div class="language-plantuml extra-class"><pre class="language-plantuml"><code><span class="token delimiter punctuation">@startuml</span>
+
+|Користувач|
+start<span class="token punctuation">;</span>
+<span class="token punctuation">:</span> Вводить критерії фільтрації<span class="token punctuation">;</span>
+
+<span class="token punctuation">:</span> Натискає на кнопку <span class="token string">&quot;Фільтрувати&quot;</span><span class="token punctuation">;</span>
+
+|Система|
+<span class="token punctuation">:</span> Обробляє запит на фільтрацію<span class="token punctuation">;</span>
+
+<span class="token punctuation">:</span> Перевіряє наявність задач<span class="token punctuation">,</span> що відповідають критеріям<span class="token punctuation">;</span>
+
+<span class="token keyword">note</span> right <span class="token color symbol">#ffaaaa</span>
+&lt;b&gt; Можливе виключення<span class="token punctuation">:</span>
+&lt;b&gt; NoTasksFoundException
+<span class="token keyword">end note</span>
+
+|Користувач|
+<span class="token punctuation">:</span> Відображає відфільтрований список задач<span class="token punctuation">;</span>
+
+stop<span class="token punctuation">;</span>
+
+<span class="token delimiter punctuation">@enduml</span>
+</code></pre></div></center> <br> <table><tr><th>ID</th> <th id="CommentTask"><code>CommentTask</code></th></tr> <tr><th>Назва</th> <td>Додавання коментаря до задачі</td></tr> <tr><th>Учасники</th> <td>Користувач, система</td></tr> <tr><th>Передумови</th> <td>Користувач увійшов до системи і має доступ до задачі</td></tr> <tr><th>Результат</th> <td>Коментар успішно додано до задачі</td></tr> <tr><th>Виключні ситуації</th> <td><ul><li>Задача не знайдена (TaskNotFoundException)</li> <li>Недостатні права для додавання коментаря (InsufficientPermissionsException)</li></ul></td></tr> <tr><th>Основний сценарій</th> <td><ol><li>Користувач вибирає задачу, до якої хоче додати коментар.</li> <li>Користувач вводить текст коментаря.</li> <li>Користувач натискає на кнопку &quot;Додати коментар&quot;.</li> <li>Система перевіряє, чи існує задача (можливе TaskNotFoundException).</li> <li>Система перевіряє права користувача на додавання коментаря (можливе InsufficientPermissionsException).</li> <li>Коментар успішно додано до задачі.</li></ol></td></tr></table> <center style="border-radius:4px;border:1px solid #cfd7e6;box-shadow:0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);padding:1em;"><div class="language-plantuml extra-class"><pre class="language-plantuml"><code><span class="token delimiter punctuation">@startuml</span>
+
+|Користувач|
+start<span class="token punctuation">;</span>
+<span class="token punctuation">:</span> Вибирає задачу для додавання коментаря<span class="token punctuation">;</span>
+
+<span class="token punctuation">:</span> Вводить текст коментаря<span class="token punctuation">;</span>
+
+<span class="token punctuation">:</span> Натискає на кнопку <span class="token string">&quot;Додати коментар&quot;</span><span class="token punctuation">;</span>
+
+|Система|
+<span class="token punctuation">:</span> Перевіряє<span class="token punctuation">,</span> чи існує задача<span class="token punctuation">;</span>
+
+<span class="token keyword">note</span> right <span class="token color symbol">#ffaaaa</span>
+&lt;b&gt; Можливе виключення<span class="token punctuation">:</span>
+&lt;b&gt; TaskNotFoundException
+<span class="token keyword">end note</span>
+
+<span class="token punctuation">:</span> Перевіряє права користувача на додавання коментаря<span class="token punctuation">;</span>
+
+<span class="token keyword">note</span> right <span class="token color symbol">#ffaaaa</span>
+&lt;b&gt; Можливе виключення<span class="token punctuation">:</span>
+&lt;b&gt; InsufficientPermissionsException
+<span class="token keyword">end note</span>
+
+|Користувач|
+<span class="token punctuation">:</span> Успішно додає коментар до задачі<span class="token punctuation">;</span>
+
+stop<span class="token punctuation">;</span>
+
+<span class="token delimiter punctuation">@enduml</span>
+</code></pre></div></center> <br> <table><tr><th>ID</th> <th id="CreateProject"><code>CreateProject</code></th></tr> <tr><th>Назва</th> <td>Створення проекту</td></tr> <tr><th>Учасники</th> <td>Тімлід, система</td></tr> <tr><th>Передумови</th> <td>Тімлід увійшов до системи</td></tr> <tr><th>Результат</th> <td>Проект успішно створено</td></tr> <tr><th>Виключні ситуації</th> <td><ul><li>Недостатні дані для створення проекту (InsufficientDataException)</li> <li>Проект з таким же ідентифікатором вже існує (ProjectAlreadyExistsException)</li> <li>Недостатні права для створення проекту (InsufficientPermissionsException)</li></ul></td></tr> <tr><th>Основний сценарій</th> <td><ol><li>Тімлід заповнює форму створення проекту.</li> <li>Тімлід натискає на кнопку &quot;Створити проект&quot;.</li> <li>Система перевіряє введені дані (можливе InsufficientDataException).</li> <li>Система перевіряє, чи існує проект з таким же ідентифікатором (можливе ProjectAlreadyExistsException).</li> <li>Проект успішно створено у системі.</li></ol></td></tr></table> <center style="border-radius:4px;border:1px solid #cfd7e6;box-shadow:0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);padding:1em;"><div class="language-plantuml extra-class"><pre class="language-plantuml"><code><span class="token delimiter punctuation">@startuml</span>
+
+|Тімлід|
+start<span class="token punctuation">;</span>
+<span class="token punctuation">:</span> Заповнює форму створення проекту<span class="token punctuation">;</span>
+
+<span class="token punctuation">:</span> Натискає на кнопку <span class="token string">&quot;Створити проект&quot;</span><span class="token punctuation">;</span>
+
+|Система|
+<span class="token punctuation">:</span> Перевіряє введені дані<span class="token punctuation">;</span>
+
+<span class="token keyword">note</span> right <span class="token color symbol">#ffaaaa</span>
+&lt;b&gt; Можливі виключення<span class="token punctuation">:</span>
+&lt;b&gt; InsufficientDataException
+<span class="token keyword">end note</span>
+
+<span class="token punctuation">:</span> Перевіряє<span class="token punctuation">,</span> чи існує проект з таким же ідентифікатором<span class="token punctuation">;</span>
+
+<span class="token keyword">note</span> right <span class="token color symbol">#ffaaaa</span>
+&lt;b&gt; Можливе виключення<span class="token punctuation">:</span>
+&lt;b&gt; ProjectAlreadyExistsException
+<span class="token keyword">end note</span>
+
+|Тімлід|
+<span class="token punctuation">:</span> Успішно створює проект<span class="token punctuation">;</span>
+
+stop<span class="token punctuation">;</span>
+
+<span class="token delimiter punctuation">@enduml</span>
+</code></pre></div></center> <br> <table><tr><th>ID</th> <th id="EditProject"><code>EditProject</code></th></tr> <tr><th>Назва</th> <td>Редагування проекту</td></tr> <tr><th>Учасники</th> <td>Тімлід, система</td></tr> <tr><th>Передумови</th> <td>Тімлід увійшов до системи і має доступ до проекту</td></tr> <tr><th>Результат</th> <td>Проект успішно редаговано</td></tr> <tr><th>Виключні ситуації</th> <td><ul><li>Недостатні дані для редагування проекту (InsufficientDataException)</li> <li>Проект не знайдено (ProjectNotFoundException)</li> <li>Недостатні права для редагування проекту (InsufficientPermissionsException)</li></ul></td></tr> <tr><th>Основний сценарій</th> <td><ol><li>Тімлід вибирає проект для редагування.</li> <li>Тімлід вносить зміни до проекту.</li> <li>Тімлід натискає на кнопку &quot;Зберегти зміни&quot;.</li> <li>Система перевіряє введені дані (можливе InsufficientDataException).</li> <li>Система перевіряє, чи існує проект (можливе ProjectNotFoundException).</li> <li>Проект успішно редаговано у системі.</li></ol></td></tr></table> <center style="border-radius:4px;border:1px solid #cfd7e6;box-shadow:0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);padding:1em;"><div class="language-plantuml extra-class"><pre class="language-plantuml"><code><span class="token delimiter punctuation">@startuml</span>
+
+|Тімлід|
+start<span class="token punctuation">;</span>
+<span class="token punctuation">:</span> Вибирає проект для редагування<span class="token punctuation">;</span>
+
+<span class="token punctuation">:</span> Вносить зміни до проекту<span class="token punctuation">;</span>
+
+<span class="token punctuation">:</span> Натискає на кнопку <span class="token string">&quot;Зберегти зміни&quot;</span><span class="token punctuation">;</span>
+
+|Система|
+<span class="token punctuation">:</span> Перевіряє введені дані<span class="token punctuation">;</span>
+
+<span class="token keyword">note</span> right <span class="token color symbol">#ffaaaa</span>
+&lt;b&gt; Можливі виключення<span class="token punctuation">:</span>
+&lt;b&gt; InsufficientDataException
+<span class="token keyword">end note</span>
+
+<span class="token punctuation">:</span> Перевіряє<span class="token punctuation">,</span> чи існує проект<span class="token punctuation">;</span>
+
+<span class="token keyword">note</span> right <span class="token color symbol">#ffaaaa</span>
+&lt;b&gt; Можливе виключення<span class="token punctuation">:</span>
+&lt;b&gt; ProjectNotFoundException
+<span class="token keyword">end note</span>
+
+|Тімлід|
+<span class="token punctuation">:</span> Успішно редагує проект<span class="token punctuation">;</span>
+
+stop<span class="token punctuation">;</span>
+
+<span class="token delimiter punctuation">@enduml</span>
+</code></pre></div></center> <br> <table><tr><th>ID</th> <th id="DeleteProject"><code>DeleteProject</code></th></tr> <tr><th>Назва</th> <td>Видалення проекту</td></tr> <tr><th>Учасники</th> <td>Тімлід, система</td></tr> <tr><th>Передумови</th> <td>Тімлід увійшов до системи і має доступ до проекту</td></tr> <tr><th>Результат</th> <td>Проект успішно видалено</td></tr> <tr><th>Виключні ситуації</th> <td><ul><li>Проект не знайдено (ProjectNotFoundException)</li> <li>Недостатні права для видалення проекту (InsufficientPermissionsException)</li></ul></td></tr> <tr><th>Основний сценарій</th> <td><ol><li>Тімлід вибирає проект для видалення.</li> <li>Тімлід підтверджує видалення проекту.</li> <li>Система перевіряє, чи існує проект (можливе ProjectNotFoundException).</li> <li>Проект успішно видалено з системи.</li></ol></td></tr></table> <center style="border-radius:4px;border:1px solid #cfd7e6;box-shadow:0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);padding:1em;"><div class="language-plantuml extra-class"><pre class="language-plantuml"><code><span class="token delimiter punctuation">@startuml</span>
+
+|Тімлід|
+start<span class="token punctuation">;</span>
+<span class="token punctuation">:</span> Вибирає проект для видалення<span class="token punctuation">;</span>
+
+<span class="token punctuation">:</span> Підтверджує видалення проекту<span class="token punctuation">;</span>
+
+|Система|
+<span class="token punctuation">:</span> Перевіряє<span class="token punctuation">,</span> чи існує проект<span class="token punctuation">;</span>
+
+<span class="token keyword">note</span> right <span class="token color symbol">#ffaaaa</span>
+&lt;b&gt; Можливе виключення<span class="token punctuation">:</span>
+&lt;b&gt; ProjectNotFoundException
+<span class="token keyword">end note</span>
+
+|Тімлід|
+<span class="token punctuation">:</span> Успішно видаляє проект<span class="token punctuation">;</span>
+
+stop<span class="token punctuation">;</span>
+
+<span class="token delimiter punctuation">@enduml</span>
+</code></pre></div></center> <br> <table><tr><th>ID</th> <th id="BanUser"><code>BanUser</code></th></tr> <tr><th>Назва</th> <td>Блокування користувача</td></tr> <tr><th>Учасники</th> <td>Адміністратор, система</td></tr> <tr><th>Передумови</th> <td>Адміністратор увійшов до системи</td></tr> <tr><th>Результат</th> <td>Користувача успішно заблоковано</td></tr> <tr><th>Виключні ситуації</th> <td><ul><li>Користувача не знайдено (UserNotFoundException)</li> <li>Недостатні права для блокування користувача (InsufficientPermissionsException)</li></ul></td></tr> <tr><th>Основний сценарій</th> <td><ol><li>Адміністратор вибирає користувача для блокування.</li> <li>Адміністратор підтверджує блокування користувача.</li> <li>Система перевіряє, чи існує користувач (можливе UserNotFoundException).</li> <li>Користувача успішно заблоковано у системі.</li></ol></td></tr></table> <center style="border-radius:4px;border:1px solid #cfd7e6;box-shadow:0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);padding:1em;"><div class="language-plantuml extra-class"><pre class="language-plantuml"><code><span class="token delimiter punctuation">@startuml</span>
+
+|Адміністратор|
+start<span class="token punctuation">;</span>
+<span class="token punctuation">:</span> Вибирає користувача для блокування<span class="token punctuation">;</span>
+
+<span class="token punctuation">:</span> Підтверджує блокування користувача<span class="token punctuation">;</span>
+
+|Система|
+<span class="token punctuation">:</span> Перевіряє<span class="token punctuation">,</span> чи існує користувач<span class="token punctuation">;</span>
+
+<span class="token keyword">note</span> right <span class="token color symbol">#ffaaaa</span>
+&lt;b&gt; Можливе виключення<span class="token punctuation">:</span>
+&lt;b&gt; UserNotFoundException
+<span class="token keyword">end note</span>
+
+|Адміністратор|
+<span class="token punctuation">:</span> Успішно блокує користувача<span class="token punctuation">;</span>
+
+stop<span class="token punctuation">;</span>
+
+<span class="token delimiter punctuation">@enduml</span>
+</code></pre></div></center> <br> <table><tr><th>ID</th> <th id="UnbanUser"><code>UnbanUser</code></th></tr> <tr><th>Назва</th> <td>Розблокування користувача</td></tr> <tr><th>Учасники</th> <td>Адміністратор, система</td></tr> <tr><th>Передумови</th> <td>Адміністратор увійшов до системи</td></tr> <tr><th>Результат</th> <td>Користувача успішно розблоковано</td></tr> <tr><th>Виключні ситуації</th> <td><ul><li>Користувача не знайдено (UserNotFoundException)</li> <li>Користувач не заблокований (UserNotBannedException)</li> <li>Недостатні права для розблокування користувача (InsufficientPermissionsException)</li></ul></td></tr> <tr><th>Основний сценарій</th> <td><ol><li>Адміністратор вибирає користувача для розблокування.</li> <li>Адміністратор підтверджує розблокування користувача.</li> <li>Система перевіряє, чи існує користувач (можливе UserNotFoundException).</li> <li>Система перевіряє, чи користувач заблокований (можливе UserNotBannedException).</li> <li>Користувача успішно розблоковано у системі.</li></ol></td></tr></table> <center style="border-radius:4px;border:1px solid #cfd7e6;box-shadow:0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);padding:1em;"><div class="language-plantuml extra-class"><pre class="language-plantuml"><code><span class="token delimiter punctuation">@startuml</span>
+
+|Адміністратор|
+start<span class="token punctuation">;</span>
+<span class="token punctuation">:</span> Вибирає користувача для розблокування<span class="token punctuation">;</span>
+
+<span class="token punctuation">:</span> Підтверджує розблокування користувача<span class="token punctuation">;</span>
+
+|Система|
+<span class="token punctuation">:</span> Перевіряє<span class="token punctuation">,</span> чи існує користувач<span class="token punctuation">;</span>
+
+<span class="token keyword">note</span> right <span class="token color symbol">#ffaaaa</span>
+&lt;b&gt; Можливе виключення<span class="token punctuation">:</span>
+&lt;b&gt; UserNotFoundException
+<span class="token keyword">end note</span>
+
+<span class="token punctuation">:</span> Перевіряє<span class="token punctuation">,</span> чи користувач заблокований<span class="token punctuation">;</span>
+
+<span class="token keyword">note</span> right <span class="token color symbol">#ffaaaa</span>
+&lt;b&gt; Можливе виключення<span class="token punctuation">:</span>
+&lt;b&gt; UserNotBannedException
+<span class="token keyword">end note</span>
+
+|Адміністратор|
+<span class="token punctuation">:</span> Успішно розблоковує користувача<span class="token punctuation">;</span>
+
+stop<span class="token punctuation">;</span>
+
+<span class="token delimiter punctuation">@enduml</span>
+</code></pre></div></center></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.16b6df24.js" defer></script><script src="/assets/js/2.79c8b5da.js" defer></script><script src="/assets/js/1.2502fb65.js" defer></script><script src="/assets/js/36.3055289d.js" defer></script>
+  </body>
+</html>

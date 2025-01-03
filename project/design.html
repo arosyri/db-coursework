@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Проєктування бази даних | Курсова робота</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    
+    <meta name="description" content="Документація для курсової роботи">
+    
+    <link rel="preload" href="/assets/css/0.styles.9f84806b.css" as="style"><link rel="preload" href="/assets/js/app.16b6df24.js" as="script"><link rel="preload" href="/assets/js/2.79c8b5da.js" as="script"><link rel="preload" href="/assets/js/1.2502fb65.js" as="script"><link rel="preload" href="/assets/js/22.eb62c738.js" as="script"><link rel="prefetch" href="/assets/js/10.acd366ff.js"><link rel="prefetch" href="/assets/js/11.2689ba83.js"><link rel="prefetch" href="/assets/js/12.137a9576.js"><link rel="prefetch" href="/assets/js/13.786f62b7.js"><link rel="prefetch" href="/assets/js/14.8a6463d3.js"><link rel="prefetch" href="/assets/js/15.9f59e3b5.js"><link rel="prefetch" href="/assets/js/16.47e1d84d.js"><link rel="prefetch" href="/assets/js/17.368b07ea.js"><link rel="prefetch" href="/assets/js/18.8241d824.js"><link rel="prefetch" href="/assets/js/19.56a0d05b.js"><link rel="prefetch" href="/assets/js/20.8f60a139.js"><link rel="prefetch" href="/assets/js/21.e21ffad3.js"><link rel="prefetch" href="/assets/js/23.b2b67d98.js"><link rel="prefetch" href="/assets/js/24.99e8d848.js"><link rel="prefetch" href="/assets/js/25.bf9b0914.js"><link rel="prefetch" href="/assets/js/26.d552a4be.js"><link rel="prefetch" href="/assets/js/27.70519e16.js"><link rel="prefetch" href="/assets/js/28.95eb6d96.js"><link rel="prefetch" href="/assets/js/29.0c1bb557.js"><link rel="prefetch" href="/assets/js/3.8af8fcbf.js"><link rel="prefetch" href="/assets/js/30.8063a5e8.js"><link rel="prefetch" href="/assets/js/31.51c088ab.js"><link rel="prefetch" href="/assets/js/32.e1bbe1d6.js"><link rel="prefetch" href="/assets/js/33.093d45dc.js"><link rel="prefetch" href="/assets/js/34.cf35852e.js"><link rel="prefetch" href="/assets/js/35.a5bedcab.js"><link rel="prefetch" href="/assets/js/36.3055289d.js"><link rel="prefetch" href="/assets/js/4.a861951e.js"><link rel="prefetch" href="/assets/js/5.c3d19108.js"><link rel="prefetch" href="/assets/js/6.87538154.js"><link rel="prefetch" href="/assets/js/7.91537c65.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.6fed1ae2.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.9f84806b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Курсова робота</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="проєктування-бази-даних"><a href="#проєктування-бази-даних" class="header-anchor">#</a> Проєктування бази даних</h1> <h2 id="модель-бізнес-об-єктів"><a href="#модель-бізнес-об-єктів" class="header-anchor">#</a> Модель бізнес об'єктів</h2> <div class="language-plantuml extra-class"><pre class="language-plantuml"><code><span class="token delimiter punctuation">@startuml</span>
+left to right direction
+<span class="token keyword">entity</span> User <span class="token color symbol">#cyan</span>
+<span class="token keyword">entity</span> User.id #lightCyan
+<span class="token keyword">entity</span> User.username #lightCyan
+<span class="token keyword">entity</span> User.email #lightCyan
+<span class="token keyword">entity</span> User.password #lightCyan
+<span class="token keyword">entity</span> User.roleId #lightCyan
+<span class="token keyword">entity</span> User.status #lightCyan
+<span class="token keyword">entity</span> User.createdAt #lightCyan
+
+User.id <span class="token arrow operator">-r-*</span> User
+User.username <span class="token arrow operator">--*</span> User
+User.email <span class="token arrow operator">--*</span> User
+User.password <span class="token arrow operator">--*</span> User
+User.roleId <span class="token arrow operator">--*</span> User
+User.status <span class="token arrow operator">--*</span> User
+User.createdAt <span class="token arrow operator">--*</span> User
+
+<span class="token keyword">entity</span> Role <span class="token color symbol">#yellow</span>
+<span class="token keyword">entity</span> Role.id #lightYellow
+<span class="token keyword">entity</span> Role.name #lightYellow
+
+Role.id <span class="token arrow operator">--*</span> Role
+Role.name <span class="token arrow operator">--*</span> Role
+
+<span class="token keyword">entity</span> Project <span class="token color symbol">#gray</span>
+<span class="token keyword">entity</span> Project.id #lightGray
+<span class="token keyword">entity</span> Project.name #lightGray
+<span class="token keyword">entity</span> Project.description #lightGray
+<span class="token keyword">entity</span> Project<span class="token arrow operator">.o</span>wnerId #lightGray
+<span class="token keyword">entity</span> Project.teamId #lightGray
+<span class="token keyword">entity</span> Project.createdAt #lightGray
+
+Project.id <span class="token arrow operator">-u-*</span> Project
+Project.name <span class="token arrow operator">-u-*</span> Project
+Project.description <span class="token arrow operator">--*</span> Project
+Project<span class="token arrow operator">.o</span>wnerId <span class="token arrow operator">--*</span> Project
+Project.teamId <span class="token arrow operator">--*</span> Project
+Project.createdAt <span class="token arrow operator">--*</span> Project
+
+<span class="token keyword">entity</span> Team #lightBlue
+<span class="token keyword">entity</span> Team.id #lightBlue
+<span class="token keyword">entity</span> Team.createdAt #lightBlue
+
+Team.id <span class="token arrow operator">-u-*</span> Team
+Team.createdAt <span class="token arrow operator">--*</span> Team
+
+<span class="token keyword">entity</span> Member <span class="token color symbol">#red</span>
+<span class="token keyword">entity</span> Member.id #lightPink
+<span class="token keyword">entity</span> Member.userId #lightPink
+<span class="token keyword">entity</span> Member.teamId #lightPink
+<span class="token keyword">entity</span> Member.teamRole #lightPink
+<span class="token keyword">entity</span> Member.joinedAt #lightPink
+
+Member.id <span class="token arrow operator">-u-*</span> Member
+Member.userId <span class="token arrow operator">--*</span> Member
+Member.teamId <span class="token arrow operator">--*</span> Member
+Member.teamRole <span class="token arrow operator">--*</span> Member
+Member.joinedAt <span class="token arrow operator">--*</span> Member
+
+<span class="token keyword">entity</span> Task <span class="token color symbol">#purple</span>
+<span class="token keyword">entity</span> Task.id <span class="token color symbol">#plum</span>
+<span class="token keyword">entity</span> Task.title <span class="token color symbol">#plum</span>
+<span class="token keyword">entity</span> Task.description <span class="token color symbol">#plum</span>
+<span class="token keyword">entity</span> Task.assignedTo <span class="token color symbol">#plum</span>
+<span class="token keyword">entity</span> Task.projectId <span class="token color symbol">#plum</span>
+<span class="token keyword">entity</span> Task.status <span class="token color symbol">#plum</span>
+<span class="token keyword">entity</span> Task.priority <span class="token color symbol">#plum</span>
+<span class="token keyword">entity</span> Task.dueDate <span class="token color symbol">#plum</span>
+<span class="token keyword">entity</span> Task.createdAt <span class="token color symbol">#plum</span>
+
+Task.id <span class="token arrow operator">-u-*</span> Task
+Task.title <span class="token arrow operator">--*</span> Task
+Task.description <span class="token arrow operator">--*</span> Task
+Task.assignedTo <span class="token arrow operator">--*</span> Task
+Task.projectId <span class="token arrow operator">--*</span> Task
+Task.status <span class="token arrow operator">--*</span> Task
+Task.priority <span class="token arrow operator">--*</span> Task
+Task.dueDate <span class="token arrow operator">--*</span> Task
+Task.createdAt <span class="token arrow operator">--*</span> Task
+
+<span class="token keyword">entity</span> Artefact <span class="token color symbol">#orange</span>
+<span class="token keyword">entity</span> Artefact.id <span class="token color symbol">#orange</span>
+<span class="token keyword">entity</span> Artefact.title <span class="token color symbol">#orange</span>
+<span class="token keyword">entity</span> Artefact.description <span class="token color symbol">#orange</span>
+<span class="token keyword">entity</span> Artefact.filePath <span class="token color symbol">#orange</span>
+<span class="token keyword">entity</span> Artefact.fileType <span class="token color symbol">#orange</span>
+<span class="token keyword">entity</span> Artefact.uploadedBy <span class="token color symbol">#orange</span>
+<span class="token keyword">entity</span> Artefact.projectId <span class="token color symbol">#orange</span>
+<span class="token keyword">entity</span> Artefact.createdAt <span class="token color symbol">#orange</span>
+
+Artefact.id <span class="token arrow operator">-u-*</span> Artefact
+Artefact.title <span class="token arrow operator">--*</span> Artefact
+Artefact.description <span class="token arrow operator">--*</span> Artefact
+Artefact.filePath <span class="token arrow operator">--*</span> Artefact
+Artefact.fileType <span class="token arrow operator">--*</span> Artefact
+Artefact.uploadedBy <span class="token arrow operator">--*</span> Artefact
+Artefact.projectId <span class="token arrow operator">--*</span> Artefact
+Artefact.createdAt <span class="token arrow operator">--*</span> Artefact
+
+<span class="token keyword">entity</span> Grant #lightGreen
+<span class="token keyword">entity</span> Grant.id #lightGreen
+<span class="token keyword">entity</span> Grant.projectId #lightGreen
+<span class="token keyword">entity</span> Grant.userId #lightGreen
+<span class="token keyword">entity</span> Grant.createdAt #lightGreen
+
+Grant.id <span class="token arrow operator">-u-*</span> Grant
+Grant.projectId <span class="token arrow operator">--*</span> Grant
+Grant.userId <span class="token arrow operator">--*</span> Grant
+Grant.createdAt <span class="token arrow operator">--*</span> Grant
+
+User <span class="token string">&quot;1.1&quot;</span> -u- <span class="token string">&quot;0.*&quot;</span> Role
+User <span class="token string">&quot;1.1&quot;</span> -- <span class="token string">&quot;0.*&quot;</span> Task
+Project <span class="token string">&quot;1.1&quot;</span> -- <span class="token string">&quot;0.*&quot;</span> Team
+Team <span class="token string">&quot;1.*&quot;</span> -- <span class="token string">&quot;0.1&quot;</span> Member
+Member <span class="token string">&quot;1.*&quot;</span> -- <span class="token string">&quot;0.*&quot;</span> User
+Task <span class="token string">&quot;1.1&quot;</span> -- <span class="token string">&quot;0.*&quot;</span> User
+Artefact <span class="token string">&quot;1.1&quot;</span> -- <span class="token string">&quot;0.*&quot;</span> User
+Grant <span class="token string">&quot;1.1&quot;</span> -- <span class="token string">&quot;0.*&quot;</span> User
+Grant <span class="token string">&quot;1.1&quot;</span> -- <span class="token string">&quot;0.*&quot;</span> Project
+
+<span class="token delimiter punctuation">@enduml</span>
+</code></pre></div><h2 id="er-модель"><a href="#er-модель" class="header-anchor">#</a> ER-модель</h2> <div class="language-plantuml extra-class"><pre class="language-plantuml"><code><span class="token delimiter punctuation">@startuml</span>
+
+<span class="token keyword">package</span> AccountManagement <span class="token punctuation">{</span>
+    <span class="token keyword">class</span> User <span class="token punctuation">{</span>
+        +id <span class="token punctuation">:</span> INT
+        +username <span class="token punctuation">:</span> VARCHAR<span class="token punctuation">(</span>45<span class="token punctuation">)</span>
+        +email <span class="token punctuation">:</span> VARCHAR<span class="token punctuation">(</span>45<span class="token punctuation">)</span>
+        +password <span class="token punctuation">:</span> VARCHAR<span class="token punctuation">(</span>255<span class="token punctuation">)</span>
+        +roleId <span class="token punctuation">:</span> INT
+        +status <span class="token punctuation">:</span> ENUM<span class="token punctuation">(</span>'ACTIVE'<span class="token punctuation">,</span> 'BANNED'<span class="token punctuation">)</span>
+        +createdAt <span class="token punctuation">:</span> DATETIME
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">package</span> ProjectManagement <span class="token punctuation">{</span>
+    <span class="token keyword">class</span> Project <span class="token punctuation">{</span>
+        +id <span class="token punctuation">:</span> INT
+        +name <span class="token punctuation">:</span> VARCHAR<span class="token punctuation">(</span>100<span class="token punctuation">)</span>
+        +description <span class="token punctuation">:</span> TEXT
+        +ownerId <span class="token punctuation">:</span> INT
+        +teamId <span class="token punctuation">:</span> INT
+        +createdAt <span class="token punctuation">:</span> DATETIME
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">class</span> Team <span class="token punctuation">{</span>
+        +id <span class="token punctuation">:</span> INT
+        +createdAt <span class="token punctuation">:</span> DATETIME
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">class</span> Member <span class="token punctuation">{</span>
+        +id <span class="token punctuation">:</span> INT
+        +userId <span class="token punctuation">:</span> INT
+        +teamId <span class="token punctuation">:</span> INT
+        +teamRole <span class="token punctuation">:</span> ENUM<span class="token punctuation">(</span>'Developer'<span class="token punctuation">,</span> 'Project Leader'<span class="token punctuation">)</span>
+        +joinedAt <span class="token punctuation">:</span> DATETIME
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">class</span> Task <span class="token punctuation">{</span>
+        +id <span class="token punctuation">:</span> INT
+        +title <span class="token punctuation">:</span> VARCHAR<span class="token punctuation">(</span>100<span class="token punctuation">)</span>
+        +description <span class="token punctuation">:</span> TEXT
+        +assignedTo <span class="token punctuation">:</span> INT
+        +projectId <span class="token punctuation">:</span> INT
+        +status <span class="token punctuation">:</span> ENUM<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        +priority <span class="token punctuation">:</span> ENUM<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        +dueDate <span class="token punctuation">:</span> DATETIME
+        +createdAt <span class="token punctuation">:</span> DATETIME
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">class</span> Artefact <span class="token punctuation">{</span>
+        +id <span class="token punctuation">:</span> INT
+        +title <span class="token punctuation">:</span> VARCHAR<span class="token punctuation">(</span>100<span class="token punctuation">)</span>
+        +description <span class="token punctuation">:</span> TEXT
+        +filePath <span class="token punctuation">:</span> VARCHAR<span class="token punctuation">(</span>255<span class="token punctuation">)</span>
+        +fileType <span class="token punctuation">:</span> VARCHAR<span class="token punctuation">(</span>45<span class="token punctuation">)</span>
+        +uploadedBy <span class="token punctuation">:</span> INT
+        +projectId <span class="token punctuation">:</span> INT
+        +createdAt <span class="token punctuation">:</span> DATETIME
+    <span class="token punctuation">}</span>
+
+    Project <span class="token string">&quot;1&quot;</span> -- <span class="token string">&quot;*&quot;</span> Task
+    Project <span class="token string">&quot;1&quot;</span> -- <span class="token string">&quot;*&quot;</span> Artefact
+    Project <span class="token string">&quot;1&quot;</span> -- <span class="token string">&quot;1&quot;</span> Team
+    Team <span class="token string">&quot;1&quot;</span> -- <span class="token string">&quot;*&quot;</span> Member
+    Member <span class="token string">&quot;1&quot;</span> -- <span class="token string">&quot;1&quot;</span> User
+    Task <span class="token string">&quot;1&quot;</span> -- <span class="token string">&quot;1&quot;</span> User
+    Artefact <span class="token string">&quot;1&quot;</span> -- <span class="token string">&quot;1&quot;</span> User
+    Project <span class="token string">&quot;1&quot;</span> -- <span class="token string">&quot;*&quot;</span> User
+<span class="token punctuation">}</span>
+
+<span class="token keyword">package</span> PermissionManagement <span class="token punctuation">{</span>
+    <span class="token keyword">class</span> Role <span class="token punctuation">{</span>
+        +id <span class="token punctuation">:</span> INT
+        +name <span class="token punctuation">:</span> VARCHAR<span class="token punctuation">(</span>45<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">class</span> Grant <span class="token punctuation">{</span>
+        +id <span class="token punctuation">:</span> INT
+        +projectId <span class="token punctuation">:</span> INT
+        +userId <span class="token punctuation">:</span> INT
+        +createdAt <span class="token punctuation">:</span> DATETIME
+    <span class="token punctuation">}</span>
+
+    Grant <span class="token string">&quot;1&quot;</span> -- <span class="token string">&quot;*&quot;</span> Project
+    Grant <span class="token string">&quot;1&quot;</span> -- <span class="token string">&quot;1&quot;</span> User
+    User <span class="token string">&quot;1&quot;</span> -- <span class="token string">&quot;1&quot;</span> Role
+<span class="token punctuation">}</span>
+
+<span class="token delimiter punctuation">@enduml</span>
+</code></pre></div><h2 id="реляціина-схема"><a href="#реляціина-схема" class="header-anchor">#</a> Реляційна схема</h2> <p><img src="/assets/img/relational-schema.5094eb00.png" alt="Реляційна схема"></p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.16b6df24.js" defer></script><script src="/assets/js/2.79c8b5da.js" defer></script><script src="/assets/js/1.2502fb65.js" defer></script><script src="/assets/js/22.eb62c738.js" defer></script>
+  </body>
+</html>
