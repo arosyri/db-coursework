@@ -1,0 +1,12 @@
+[book]
+language = "uk"
+multilingual = true
+src = "./"
+
+authors = ["Max Netyaga \"@maxnetyaga\""]
+
+title = "Курсова робота з предмету \"Бази даних\": Система управління проєктами"
+
+[preprocessor.plantuml]
+plantuml-cmd = "http://www.plantuml.com/plantuml"
+use-data-uris = true

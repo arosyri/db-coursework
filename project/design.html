@@ -1,230 +1,425 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Проєктування бази даних | Курсова робота</title>
-    <meta name="generator" content="VuePress 1.9.10">
-    
-    <meta name="description" content="Документація для курсової роботи">
-    
-    <link rel="preload" href="/assets/css/0.styles.9f84806b.css" as="style"><link rel="preload" href="/assets/js/app.16b6df24.js" as="script"><link rel="preload" href="/assets/js/2.79c8b5da.js" as="script"><link rel="preload" href="/assets/js/1.2502fb65.js" as="script"><link rel="preload" href="/assets/js/22.eb62c738.js" as="script"><link rel="prefetch" href="/assets/js/10.acd366ff.js"><link rel="prefetch" href="/assets/js/11.2689ba83.js"><link rel="prefetch" href="/assets/js/12.137a9576.js"><link rel="prefetch" href="/assets/js/13.786f62b7.js"><link rel="prefetch" href="/assets/js/14.8a6463d3.js"><link rel="prefetch" href="/assets/js/15.9f59e3b5.js"><link rel="prefetch" href="/assets/js/16.47e1d84d.js"><link rel="prefetch" href="/assets/js/17.368b07ea.js"><link rel="prefetch" href="/assets/js/18.8241d824.js"><link rel="prefetch" href="/assets/js/19.56a0d05b.js"><link rel="prefetch" href="/assets/js/20.8f60a139.js"><link rel="prefetch" href="/assets/js/21.e21ffad3.js"><link rel="prefetch" href="/assets/js/23.b2b67d98.js"><link rel="prefetch" href="/assets/js/24.99e8d848.js"><link rel="prefetch" href="/assets/js/25.bf9b0914.js"><link rel="prefetch" href="/assets/js/26.d552a4be.js"><link rel="prefetch" href="/assets/js/27.70519e16.js"><link rel="prefetch" href="/assets/js/28.95eb6d96.js"><link rel="prefetch" href="/assets/js/29.0c1bb557.js"><link rel="prefetch" href="/assets/js/3.8af8fcbf.js"><link rel="prefetch" href="/assets/js/30.8063a5e8.js"><link rel="prefetch" href="/assets/js/31.51c088ab.js"><link rel="prefetch" href="/assets/js/32.e1bbe1d6.js"><link rel="prefetch" href="/assets/js/33.093d45dc.js"><link rel="prefetch" href="/assets/js/34.cf35852e.js"><link rel="prefetch" href="/assets/js/35.a5bedcab.js"><link rel="prefetch" href="/assets/js/36.3055289d.js"><link rel="prefetch" href="/assets/js/4.a861951e.js"><link rel="prefetch" href="/assets/js/5.c3d19108.js"><link rel="prefetch" href="/assets/js/6.87538154.js"><link rel="prefetch" href="/assets/js/7.91537c65.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.6fed1ae2.js">
-    <link rel="stylesheet" href="/assets/css/0.styles.9f84806b.css">
-  </head>
-  <body>
-    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Курсова робота</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="проєктування-бази-даних"><a href="#проєктування-бази-даних" class="header-anchor">#</a> Проєктування бази даних</h1> <h2 id="модель-бізнес-об-єктів"><a href="#модель-бізнес-об-єктів" class="header-anchor">#</a> Модель бізнес об'єктів</h2> <div class="language-plantuml extra-class"><pre class="language-plantuml"><code><span class="token delimiter punctuation">@startuml</span>
+<!DOCTYPE HTML>
+<html lang="uk" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Проєктування інформаційного забезпечення - Курсова робота з предмету &quot;Бази даних&quot;: Система управління проєктами</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Курсова робота з предмету &quot;Бази даних&quot;: Система управління проєктами</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="Проєктування-бази-даних"><a class="header" href="#Проєктування-бази-даних">Проєктування бази даних</a></h1>
+<h2 id="Модель-бізнес-обєктів"><a class="header" href="#Модель-бізнес-обєктів">Модель бізнес об'єктів</a></h2>
+<pre><code class="language-plantuml">@startuml
 left to right direction
-<span class="token keyword">entity</span> User <span class="token color symbol">#cyan</span>
-<span class="token keyword">entity</span> User.id #lightCyan
-<span class="token keyword">entity</span> User.username #lightCyan
-<span class="token keyword">entity</span> User.email #lightCyan
-<span class="token keyword">entity</span> User.password #lightCyan
-<span class="token keyword">entity</span> User.roleId #lightCyan
-<span class="token keyword">entity</span> User.status #lightCyan
-<span class="token keyword">entity</span> User.createdAt #lightCyan
+entity User #cyan
+entity User.id #lightCyan
+entity User.username #lightCyan
+entity User.email #lightCyan
+entity User.password #lightCyan
+entity User.roleId #lightCyan
+entity User.status #lightCyan
+entity User.createdAt #lightCyan
 
-User.id <span class="token arrow operator">-r-*</span> User
-User.username <span class="token arrow operator">--*</span> User
-User.email <span class="token arrow operator">--*</span> User
-User.password <span class="token arrow operator">--*</span> User
-User.roleId <span class="token arrow operator">--*</span> User
-User.status <span class="token arrow operator">--*</span> User
-User.createdAt <span class="token arrow operator">--*</span> User
+User.id -r-* User
+User.username --* User
+User.email --* User
+User.password --* User
+User.roleId --* User
+User.status --* User
+User.createdAt --* User
 
-<span class="token keyword">entity</span> Role <span class="token color symbol">#yellow</span>
-<span class="token keyword">entity</span> Role.id #lightYellow
-<span class="token keyword">entity</span> Role.name #lightYellow
+entity Role #yellow
+entity Role.id #lightYellow
+entity Role.name #lightYellow
 
-Role.id <span class="token arrow operator">--*</span> Role
-Role.name <span class="token arrow operator">--*</span> Role
+Role.id --* Role
+Role.name --* Role
 
-<span class="token keyword">entity</span> Project <span class="token color symbol">#gray</span>
-<span class="token keyword">entity</span> Project.id #lightGray
-<span class="token keyword">entity</span> Project.name #lightGray
-<span class="token keyword">entity</span> Project.description #lightGray
-<span class="token keyword">entity</span> Project<span class="token arrow operator">.o</span>wnerId #lightGray
-<span class="token keyword">entity</span> Project.teamId #lightGray
-<span class="token keyword">entity</span> Project.createdAt #lightGray
+entity Project #gray
+entity Project.id #lightGray
+entity Project.name #lightGray
+entity Project.description #lightGray
+entity Project.ownerId #lightGray
+entity Project.teamId #lightGray
+entity Project.createdAt #lightGray
 
-Project.id <span class="token arrow operator">-u-*</span> Project
-Project.name <span class="token arrow operator">-u-*</span> Project
-Project.description <span class="token arrow operator">--*</span> Project
-Project<span class="token arrow operator">.o</span>wnerId <span class="token arrow operator">--*</span> Project
-Project.teamId <span class="token arrow operator">--*</span> Project
-Project.createdAt <span class="token arrow operator">--*</span> Project
+Project.id -u-* Project
+Project.name -u-* Project
+Project.description --* Project
+Project.ownerId --* Project
+Project.teamId --* Project
+Project.createdAt --* Project
 
-<span class="token keyword">entity</span> Team #lightBlue
-<span class="token keyword">entity</span> Team.id #lightBlue
-<span class="token keyword">entity</span> Team.createdAt #lightBlue
+entity Team #lightBlue
+entity Team.id #lightBlue
+entity Team.createdAt #lightBlue
 
-Team.id <span class="token arrow operator">-u-*</span> Team
-Team.createdAt <span class="token arrow operator">--*</span> Team
+Team.id -u-* Team
+Team.createdAt --* Team
 
-<span class="token keyword">entity</span> Member <span class="token color symbol">#red</span>
-<span class="token keyword">entity</span> Member.id #lightPink
-<span class="token keyword">entity</span> Member.userId #lightPink
-<span class="token keyword">entity</span> Member.teamId #lightPink
-<span class="token keyword">entity</span> Member.teamRole #lightPink
-<span class="token keyword">entity</span> Member.joinedAt #lightPink
+entity Member #red
+entity Member.id #lightPink
+entity Member.userId #lightPink
+entity Member.teamId #lightPink
+entity Member.teamRole #lightPink
+entity Member.joinedAt #lightPink
 
-Member.id <span class="token arrow operator">-u-*</span> Member
-Member.userId <span class="token arrow operator">--*</span> Member
-Member.teamId <span class="token arrow operator">--*</span> Member
-Member.teamRole <span class="token arrow operator">--*</span> Member
-Member.joinedAt <span class="token arrow operator">--*</span> Member
+Member.id -u-* Member
+Member.userId --* Member
+Member.teamId --* Member
+Member.teamRole --* Member
+Member.joinedAt --* Member
 
-<span class="token keyword">entity</span> Task <span class="token color symbol">#purple</span>
-<span class="token keyword">entity</span> Task.id <span class="token color symbol">#plum</span>
-<span class="token keyword">entity</span> Task.title <span class="token color symbol">#plum</span>
-<span class="token keyword">entity</span> Task.description <span class="token color symbol">#plum</span>
-<span class="token keyword">entity</span> Task.assignedTo <span class="token color symbol">#plum</span>
-<span class="token keyword">entity</span> Task.projectId <span class="token color symbol">#plum</span>
-<span class="token keyword">entity</span> Task.status <span class="token color symbol">#plum</span>
-<span class="token keyword">entity</span> Task.priority <span class="token color symbol">#plum</span>
-<span class="token keyword">entity</span> Task.dueDate <span class="token color symbol">#plum</span>
-<span class="token keyword">entity</span> Task.createdAt <span class="token color symbol">#plum</span>
+entity Task #purple
+entity Task.id #plum
+entity Task.title #plum
+entity Task.description #plum
+entity Task.assignedTo #plum
+entity Task.projectId #plum
+entity Task.status #plum
+entity Task.priority #plum
+entity Task.dueDate #plum
+entity Task.createdAt #plum
 
-Task.id <span class="token arrow operator">-u-*</span> Task
-Task.title <span class="token arrow operator">--*</span> Task
-Task.description <span class="token arrow operator">--*</span> Task
-Task.assignedTo <span class="token arrow operator">--*</span> Task
-Task.projectId <span class="token arrow operator">--*</span> Task
-Task.status <span class="token arrow operator">--*</span> Task
-Task.priority <span class="token arrow operator">--*</span> Task
-Task.dueDate <span class="token arrow operator">--*</span> Task
-Task.createdAt <span class="token arrow operator">--*</span> Task
+Task.id -u-* Task
+Task.title --* Task
+Task.description --* Task
+Task.assignedTo --* Task
+Task.projectId --* Task
+Task.status --* Task
+Task.priority --* Task
+Task.dueDate --* Task
+Task.createdAt --* Task
 
-<span class="token keyword">entity</span> Artefact <span class="token color symbol">#orange</span>
-<span class="token keyword">entity</span> Artefact.id <span class="token color symbol">#orange</span>
-<span class="token keyword">entity</span> Artefact.title <span class="token color symbol">#orange</span>
-<span class="token keyword">entity</span> Artefact.description <span class="token color symbol">#orange</span>
-<span class="token keyword">entity</span> Artefact.filePath <span class="token color symbol">#orange</span>
-<span class="token keyword">entity</span> Artefact.fileType <span class="token color symbol">#orange</span>
-<span class="token keyword">entity</span> Artefact.uploadedBy <span class="token color symbol">#orange</span>
-<span class="token keyword">entity</span> Artefact.projectId <span class="token color symbol">#orange</span>
-<span class="token keyword">entity</span> Artefact.createdAt <span class="token color symbol">#orange</span>
+entity Artefact #orange
+entity Artefact.id #orange
+entity Artefact.title #orange
+entity Artefact.description #orange
+entity Artefact.filePath #orange
+entity Artefact.fileType #orange
+entity Artefact.uploadedBy #orange
+entity Artefact.projectId #orange
+entity Artefact.createdAt #orange
 
-Artefact.id <span class="token arrow operator">-u-*</span> Artefact
-Artefact.title <span class="token arrow operator">--*</span> Artefact
-Artefact.description <span class="token arrow operator">--*</span> Artefact
-Artefact.filePath <span class="token arrow operator">--*</span> Artefact
-Artefact.fileType <span class="token arrow operator">--*</span> Artefact
-Artefact.uploadedBy <span class="token arrow operator">--*</span> Artefact
-Artefact.projectId <span class="token arrow operator">--*</span> Artefact
-Artefact.createdAt <span class="token arrow operator">--*</span> Artefact
+Artefact.id -u-* Artefact
+Artefact.title --* Artefact
+Artefact.description --* Artefact
+Artefact.filePath --* Artefact
+Artefact.fileType --* Artefact
+Artefact.uploadedBy --* Artefact
+Artefact.projectId --* Artefact
+Artefact.createdAt --* Artefact
 
-<span class="token keyword">entity</span> Grant #lightGreen
-<span class="token keyword">entity</span> Grant.id #lightGreen
-<span class="token keyword">entity</span> Grant.projectId #lightGreen
-<span class="token keyword">entity</span> Grant.userId #lightGreen
-<span class="token keyword">entity</span> Grant.createdAt #lightGreen
+entity Grant #lightGreen
+entity Grant.id #lightGreen
+entity Grant.projectId #lightGreen
+entity Grant.userId #lightGreen
+entity Grant.createdAt #lightGreen
 
-Grant.id <span class="token arrow operator">-u-*</span> Grant
-Grant.projectId <span class="token arrow operator">--*</span> Grant
-Grant.userId <span class="token arrow operator">--*</span> Grant
-Grant.createdAt <span class="token arrow operator">--*</span> Grant
+Grant.id -u-* Grant
+Grant.projectId --* Grant
+Grant.userId --* Grant
+Grant.createdAt --* Grant
 
-User <span class="token string">&quot;1.1&quot;</span> -u- <span class="token string">&quot;0.*&quot;</span> Role
-User <span class="token string">&quot;1.1&quot;</span> -- <span class="token string">&quot;0.*&quot;</span> Task
-Project <span class="token string">&quot;1.1&quot;</span> -- <span class="token string">&quot;0.*&quot;</span> Team
-Team <span class="token string">&quot;1.*&quot;</span> -- <span class="token string">&quot;0.1&quot;</span> Member
-Member <span class="token string">&quot;1.*&quot;</span> -- <span class="token string">&quot;0.*&quot;</span> User
-Task <span class="token string">&quot;1.1&quot;</span> -- <span class="token string">&quot;0.*&quot;</span> User
-Artefact <span class="token string">&quot;1.1&quot;</span> -- <span class="token string">&quot;0.*&quot;</span> User
-Grant <span class="token string">&quot;1.1&quot;</span> -- <span class="token string">&quot;0.*&quot;</span> User
-Grant <span class="token string">&quot;1.1&quot;</span> -- <span class="token string">&quot;0.*&quot;</span> Project
+User "1.1" -u- "0.*" Role
+User "1.1" -- "0.*" Task
+Project "1.1" -- "0.*" Team
+Team "1.*" -- "0.1" Member
+Member "1.*" -- "0.*" User
+Task "1.1" -- "0.*" User
+Artefact "1.1" -- "0.*" User
+Grant "1.1" -- "0.*" User
+Grant "1.1" -- "0.*" Project
 
-<span class="token delimiter punctuation">@enduml</span>
-</code></pre></div><h2 id="er-модель"><a href="#er-модель" class="header-anchor">#</a> ER-модель</h2> <div class="language-plantuml extra-class"><pre class="language-plantuml"><code><span class="token delimiter punctuation">@startuml</span>
+@enduml
+</code></pre>
+<h2 id="er-модель"><a class="header" href="#er-модель">ER-модель</a></h2>
+<pre><code class="language-plantuml">@startuml
 
-<span class="token keyword">package</span> AccountManagement <span class="token punctuation">{</span>
-    <span class="token keyword">class</span> User <span class="token punctuation">{</span>
-        +id <span class="token punctuation">:</span> INT
-        +username <span class="token punctuation">:</span> VARCHAR<span class="token punctuation">(</span>45<span class="token punctuation">)</span>
-        +email <span class="token punctuation">:</span> VARCHAR<span class="token punctuation">(</span>45<span class="token punctuation">)</span>
-        +password <span class="token punctuation">:</span> VARCHAR<span class="token punctuation">(</span>255<span class="token punctuation">)</span>
-        +roleId <span class="token punctuation">:</span> INT
-        +status <span class="token punctuation">:</span> ENUM<span class="token punctuation">(</span>'ACTIVE'<span class="token punctuation">,</span> 'BANNED'<span class="token punctuation">)</span>
-        +createdAt <span class="token punctuation">:</span> DATETIME
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+package AccountManagement {
+    class User {
+        +id : INT
+        +username : VARCHAR(45)
+        +email : VARCHAR(45)
+        +password : VARCHAR(255)
+        +roleId : INT
+        +status : ENUM('ACTIVE', 'BANNED')
+        +createdAt : DATETIME
+    }
+}
 
-<span class="token keyword">package</span> ProjectManagement <span class="token punctuation">{</span>
-    <span class="token keyword">class</span> Project <span class="token punctuation">{</span>
-        +id <span class="token punctuation">:</span> INT
-        +name <span class="token punctuation">:</span> VARCHAR<span class="token punctuation">(</span>100<span class="token punctuation">)</span>
-        +description <span class="token punctuation">:</span> TEXT
-        +ownerId <span class="token punctuation">:</span> INT
-        +teamId <span class="token punctuation">:</span> INT
-        +createdAt <span class="token punctuation">:</span> DATETIME
-    <span class="token punctuation">}</span>
+package ProjectManagement {
+    class Project {
+        +id : INT
+        +name : VARCHAR(100)
+        +description : TEXT
+        +ownerId : INT
+        +teamId : INT
+        +createdAt : DATETIME
+    }
 
-    <span class="token keyword">class</span> Team <span class="token punctuation">{</span>
-        +id <span class="token punctuation">:</span> INT
-        +createdAt <span class="token punctuation">:</span> DATETIME
-    <span class="token punctuation">}</span>
+    class Team {
+        +id : INT
+        +createdAt : DATETIME
+    }
 
-    <span class="token keyword">class</span> Member <span class="token punctuation">{</span>
-        +id <span class="token punctuation">:</span> INT
-        +userId <span class="token punctuation">:</span> INT
-        +teamId <span class="token punctuation">:</span> INT
-        +teamRole <span class="token punctuation">:</span> ENUM<span class="token punctuation">(</span>'Developer'<span class="token punctuation">,</span> 'Project Leader'<span class="token punctuation">)</span>
-        +joinedAt <span class="token punctuation">:</span> DATETIME
-    <span class="token punctuation">}</span>
+    class Member {
+        +id : INT
+        +userId : INT
+        +teamId : INT
+        +teamRole : ENUM('Developer', 'Project Leader')
+        +joinedAt : DATETIME
+    }
 
-    <span class="token keyword">class</span> Task <span class="token punctuation">{</span>
-        +id <span class="token punctuation">:</span> INT
-        +title <span class="token punctuation">:</span> VARCHAR<span class="token punctuation">(</span>100<span class="token punctuation">)</span>
-        +description <span class="token punctuation">:</span> TEXT
-        +assignedTo <span class="token punctuation">:</span> INT
-        +projectId <span class="token punctuation">:</span> INT
-        +status <span class="token punctuation">:</span> ENUM<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        +priority <span class="token punctuation">:</span> ENUM<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        +dueDate <span class="token punctuation">:</span> DATETIME
-        +createdAt <span class="token punctuation">:</span> DATETIME
-    <span class="token punctuation">}</span>
+    class Task {
+        +id : INT
+        +title : VARCHAR(100)
+        +description : TEXT
+        +assignedTo : INT
+        +projectId : INT
+        +status : ENUM()
+        +priority : ENUM()
+        +dueDate : DATETIME
+        +createdAt : DATETIME
+    }
 
-    <span class="token keyword">class</span> Artefact <span class="token punctuation">{</span>
-        +id <span class="token punctuation">:</span> INT
-        +title <span class="token punctuation">:</span> VARCHAR<span class="token punctuation">(</span>100<span class="token punctuation">)</span>
-        +description <span class="token punctuation">:</span> TEXT
-        +filePath <span class="token punctuation">:</span> VARCHAR<span class="token punctuation">(</span>255<span class="token punctuation">)</span>
-        +fileType <span class="token punctuation">:</span> VARCHAR<span class="token punctuation">(</span>45<span class="token punctuation">)</span>
-        +uploadedBy <span class="token punctuation">:</span> INT
-        +projectId <span class="token punctuation">:</span> INT
-        +createdAt <span class="token punctuation">:</span> DATETIME
-    <span class="token punctuation">}</span>
+    class Artefact {
+        +id : INT
+        +title : VARCHAR(100)
+        +description : TEXT
+        +filePath : VARCHAR(255)
+        +fileType : VARCHAR(45)
+        +uploadedBy : INT
+        +projectId : INT
+        +createdAt : DATETIME
+    }
 
-    Project <span class="token string">&quot;1&quot;</span> -- <span class="token string">&quot;*&quot;</span> Task
-    Project <span class="token string">&quot;1&quot;</span> -- <span class="token string">&quot;*&quot;</span> Artefact
-    Project <span class="token string">&quot;1&quot;</span> -- <span class="token string">&quot;1&quot;</span> Team
-    Team <span class="token string">&quot;1&quot;</span> -- <span class="token string">&quot;*&quot;</span> Member
-    Member <span class="token string">&quot;1&quot;</span> -- <span class="token string">&quot;1&quot;</span> User
-    Task <span class="token string">&quot;1&quot;</span> -- <span class="token string">&quot;1&quot;</span> User
-    Artefact <span class="token string">&quot;1&quot;</span> -- <span class="token string">&quot;1&quot;</span> User
-    Project <span class="token string">&quot;1&quot;</span> -- <span class="token string">&quot;*&quot;</span> User
-<span class="token punctuation">}</span>
+    Project "1" -- "*" Task
+    Project "1" -- "*" Artefact
+    Project "1" -- "1" Team
+    Team "1" -- "*" Member
+    Member "1" -- "1" User
+    Task "1" -- "1" User
+    Artefact "1" -- "1" User
+    Project "1" -- "*" User
+}
 
-<span class="token keyword">package</span> PermissionManagement <span class="token punctuation">{</span>
-    <span class="token keyword">class</span> Role <span class="token punctuation">{</span>
-        +id <span class="token punctuation">:</span> INT
-        +name <span class="token punctuation">:</span> VARCHAR<span class="token punctuation">(</span>45<span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
+package PermissionManagement {
+    class Role {
+        +id : INT
+        +name : VARCHAR(45)
+    }
 
-    <span class="token keyword">class</span> Grant <span class="token punctuation">{</span>
-        +id <span class="token punctuation">:</span> INT
-        +projectId <span class="token punctuation">:</span> INT
-        +userId <span class="token punctuation">:</span> INT
-        +createdAt <span class="token punctuation">:</span> DATETIME
-    <span class="token punctuation">}</span>
+    class Grant {
+        +id : INT
+        +projectId : INT
+        +userId : INT
+        +createdAt : DATETIME
+    }
 
-    Grant <span class="token string">&quot;1&quot;</span> -- <span class="token string">&quot;*&quot;</span> Project
-    Grant <span class="token string">&quot;1&quot;</span> -- <span class="token string">&quot;1&quot;</span> User
-    User <span class="token string">&quot;1&quot;</span> -- <span class="token string">&quot;1&quot;</span> Role
-<span class="token punctuation">}</span>
+    Grant "1" -- "*" Project
+    Grant "1" -- "1" User
+    User "1" -- "1" Role
+}
 
-<span class="token delimiter punctuation">@enduml</span>
-</code></pre></div><h2 id="реляціина-схема"><a href="#реляціина-схема" class="header-anchor">#</a> Реляційна схема</h2> <p><img src="/assets/img/relational-schema.5094eb00.png" alt="Реляційна схема"></p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
-    <script src="/assets/js/app.16b6df24.js" defer></script><script src="/assets/js/2.79c8b5da.js" defer></script><script src="/assets/js/1.2502fb65.js" defer></script><script src="/assets/js/22.eb62c738.js" defer></script>
-  </body>
+@enduml
+</code></pre>
+<h2 id="Реляційна-схема"><a class="header" href="#Реляційна-схема">Реляційна схема</a></h2>
+<p><img src="./relational-schema.png" alt="Реляційна схема" /></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../project/use_cases.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../project/software.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../project/use_cases.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../project/software.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
 </html>

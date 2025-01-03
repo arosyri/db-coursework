@@ -1,501 +1,701 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Реалізація інформаційного та програмного забезпечення | Курсова робота</title>
-    <meta name="generator" content="VuePress 1.9.10">
-    
-    <meta name="description" content="Документація для курсової роботи">
-    
-    <link rel="preload" href="/assets/css/0.styles.9f84806b.css" as="style"><link rel="preload" href="/assets/js/app.16b6df24.js" as="script"><link rel="preload" href="/assets/js/2.79c8b5da.js" as="script"><link rel="preload" href="/assets/js/1.2502fb65.js" as="script"><link rel="preload" href="/assets/js/31.51c088ab.js" as="script"><link rel="prefetch" href="/assets/js/10.acd366ff.js"><link rel="prefetch" href="/assets/js/11.2689ba83.js"><link rel="prefetch" href="/assets/js/12.137a9576.js"><link rel="prefetch" href="/assets/js/13.786f62b7.js"><link rel="prefetch" href="/assets/js/14.8a6463d3.js"><link rel="prefetch" href="/assets/js/15.9f59e3b5.js"><link rel="prefetch" href="/assets/js/16.47e1d84d.js"><link rel="prefetch" href="/assets/js/17.368b07ea.js"><link rel="prefetch" href="/assets/js/18.8241d824.js"><link rel="prefetch" href="/assets/js/19.56a0d05b.js"><link rel="prefetch" href="/assets/js/20.8f60a139.js"><link rel="prefetch" href="/assets/js/21.e21ffad3.js"><link rel="prefetch" href="/assets/js/22.eb62c738.js"><link rel="prefetch" href="/assets/js/23.b2b67d98.js"><link rel="prefetch" href="/assets/js/24.99e8d848.js"><link rel="prefetch" href="/assets/js/25.bf9b0914.js"><link rel="prefetch" href="/assets/js/26.d552a4be.js"><link rel="prefetch" href="/assets/js/27.70519e16.js"><link rel="prefetch" href="/assets/js/28.95eb6d96.js"><link rel="prefetch" href="/assets/js/29.0c1bb557.js"><link rel="prefetch" href="/assets/js/3.8af8fcbf.js"><link rel="prefetch" href="/assets/js/30.8063a5e8.js"><link rel="prefetch" href="/assets/js/32.e1bbe1d6.js"><link rel="prefetch" href="/assets/js/33.093d45dc.js"><link rel="prefetch" href="/assets/js/34.cf35852e.js"><link rel="prefetch" href="/assets/js/35.a5bedcab.js"><link rel="prefetch" href="/assets/js/36.3055289d.js"><link rel="prefetch" href="/assets/js/4.a861951e.js"><link rel="prefetch" href="/assets/js/5.c3d19108.js"><link rel="prefetch" href="/assets/js/6.87538154.js"><link rel="prefetch" href="/assets/js/7.91537c65.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.6fed1ae2.js">
-    <link rel="stylesheet" href="/assets/css/0.styles.9f84806b.css">
-  </head>
-  <body>
-    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Курсова робота</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="реалізація-інформаціиного-та-програмного-забезпечення"><a href="#реалізація-інформаціиного-та-програмного-забезпечення" class="header-anchor">#</a> Реалізація інформаційного та програмного забезпечення</h1> <h2 id="sql-скрипт-для-створення-на-початкового-наповнення-бази-даних"><a href="#sql-скрипт-для-створення-на-початкового-наповнення-бази-даних" class="header-anchor">#</a> SQL-скрипт для створення на початкового наповнення бази даних</h2> <div class="language-sql extra-class"><pre class="language-sql"><code><span class="token comment">-- MySQL Workbench Forward Engineering</span>
-
-<span class="token keyword">SET</span> <span class="token variable">@OLD_UNIQUE_CHECKS</span><span class="token operator">=</span>@<span class="token variable">@UNIQUE_CHECKS</span><span class="token punctuation">,</span> UNIQUE_CHECKS<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token keyword">SET</span> <span class="token variable">@OLD_FOREIGN_KEY_CHECKS</span><span class="token operator">=</span>@<span class="token variable">@FOREIGN_KEY_CHECKS</span><span class="token punctuation">,</span> FOREIGN_KEY_CHECKS<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token keyword">SET</span> <span class="token variable">@OLD_SQL_MODE</span><span class="token operator">=</span>@<span class="token variable">@SQL_MODE</span><span class="token punctuation">,</span> SQL_MODE<span class="token operator">=</span><span class="token string">'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'</span><span class="token punctuation">;</span>
-
-<span class="token comment">-- -----------------------------------------------------</span>
-<span class="token comment">-- Schema mydb</span>
-<span class="token comment">-- -----------------------------------------------------</span>
-<span class="token keyword">DROP</span> <span class="token keyword">SCHEMA</span> <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> <span class="token identifier"><span class="token punctuation">`</span>mydb<span class="token punctuation">`</span></span> <span class="token punctuation">;</span>
-
-<span class="token comment">-- -----------------------------------------------------</span>
-<span class="token comment">-- Schema mydb</span>
-<span class="token comment">-- -----------------------------------------------------</span>
-<span class="token keyword">CREATE</span> <span class="token keyword">SCHEMA</span> <span class="token keyword">IF</span> <span class="token operator">NOT</span> <span class="token keyword">EXISTS</span> <span class="token identifier"><span class="token punctuation">`</span>mydb<span class="token punctuation">`</span></span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CHARACTER</span> <span class="token keyword">SET</span> utf8mb4 <span class="token punctuation">;</span>
-<span class="token keyword">USE</span> <span class="token identifier"><span class="token punctuation">`</span>mydb<span class="token punctuation">`</span></span> <span class="token punctuation">;</span>
-
-<span class="token comment">-- -----------------------------------------------------</span>
-<span class="token comment">-- Table `mydb`.`Role`</span>
-<span class="token comment">-- -----------------------------------------------------</span>
-<span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> <span class="token identifier"><span class="token punctuation">`</span>mydb<span class="token punctuation">`</span></span><span class="token punctuation">.</span><span class="token identifier"><span class="token punctuation">`</span>User<span class="token punctuation">`</span></span> <span class="token punctuation">;</span>
-
-<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token operator">NOT</span> <span class="token keyword">EXISTS</span> <span class="token identifier"><span class="token punctuation">`</span>User<span class="token punctuation">`</span></span> <span class="token punctuation">(</span>
-  <span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span> <span class="token keyword">INT</span> <span class="token keyword">UNSIGNED</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">,</span>
-  <span class="token identifier"><span class="token punctuation">`</span>username<span class="token punctuation">`</span></span> <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">45</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-  <span class="token identifier"><span class="token punctuation">`</span>email<span class="token punctuation">`</span></span> <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">45</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-  <span class="token identifier"><span class="token punctuation">`</span>password<span class="token punctuation">`</span></span> <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-  <span class="token identifier"><span class="token punctuation">`</span>roleId<span class="token punctuation">`</span></span> <span class="token keyword">INT</span> <span class="token keyword">UNSIGNED</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-  <span class="token identifier"><span class="token punctuation">`</span>status<span class="token punctuation">`</span></span> <span class="token keyword">ENUM</span><span class="token punctuation">(</span><span class="token string">'ACTIVE'</span><span class="token punctuation">,</span> <span class="token string">'BANNED'</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token string">'ACTIVE'</span><span class="token punctuation">,</span>
-  <span class="token identifier"><span class="token punctuation">`</span>createdAt<span class="token punctuation">`</span></span> <span class="token keyword">DATETIME</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span><span class="token punctuation">,</span>
-  <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-  <span class="token keyword">UNIQUE</span> <span class="token keyword">INDEX</span> <span class="token identifier"><span class="token punctuation">`</span>email_UNIQUE<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>email<span class="token punctuation">`</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-  <span class="token keyword">INDEX</span> <span class="token identifier"><span class="token punctuation">`</span>roleId_idx<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>roleId<span class="token punctuation">`</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-  <span class="token keyword">CONSTRAINT</span> <span class="token identifier"><span class="token punctuation">`</span>fk_roleId<span class="token punctuation">`</span></span>
-      <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>roleId<span class="token punctuation">`</span></span><span class="token punctuation">)</span>
-          <span class="token keyword">REFERENCES</span> <span class="token identifier"><span class="token punctuation">`</span>Role<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span><span class="token punctuation">)</span>
-          <span class="token keyword">ON</span> <span class="token keyword">DELETE</span> <span class="token keyword">NO</span> <span class="token keyword">ACTION</span>
-          <span class="token keyword">ON</span> <span class="token keyword">UPDATE</span> <span class="token keyword">NO</span> <span class="token keyword">ACTION</span>
-<span class="token punctuation">)</span> <span class="token keyword">ENGINE</span> <span class="token operator">=</span> <span class="token keyword">InnoDB</span><span class="token punctuation">;</span>
-
-<span class="token comment">-- -----------------------------------------------------</span>
-<span class="token comment">-- Table `mydb`.`Role`</span>
-<span class="token comment">-- -----------------------------------------------------</span>
-<span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> <span class="token identifier"><span class="token punctuation">`</span>mydb<span class="token punctuation">`</span></span><span class="token punctuation">.</span><span class="token identifier"><span class="token punctuation">`</span>Role<span class="token punctuation">`</span></span> <span class="token punctuation">;</span>
-
-<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token operator">NOT</span> <span class="token keyword">EXISTS</span> <span class="token identifier"><span class="token punctuation">`</span>Role<span class="token punctuation">`</span></span> <span class="token punctuation">(</span>
-    <span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span> <span class="token keyword">INT</span> <span class="token keyword">UNSIGNED</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">,</span>
-    <span class="token identifier"><span class="token punctuation">`</span>name<span class="token punctuation">`</span></span> <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">45</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token keyword">UNIQUE</span> <span class="token keyword">INDEX</span> <span class="token identifier"><span class="token punctuation">`</span>idRole_UNIQUE<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token keyword">UNIQUE</span> <span class="token keyword">INDEX</span> <span class="token identifier"><span class="token punctuation">`</span>name_UNIQUE<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>name<span class="token punctuation">`</span></span><span class="token punctuation">)</span>
-<span class="token punctuation">)</span> <span class="token keyword">ENGINE</span> <span class="token operator">=</span> <span class="token keyword">InnoDB</span><span class="token punctuation">;</span>
-
-<span class="token comment">-- -----------------------------------------------------</span>
-<span class="token comment">-- Table `mydb`.`Project`</span>
-<span class="token comment">-- -----------------------------------------------------</span>
-<span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> <span class="token identifier"><span class="token punctuation">`</span>mydb<span class="token punctuation">`</span></span><span class="token punctuation">.</span><span class="token identifier"><span class="token punctuation">`</span>Project<span class="token punctuation">`</span></span><span class="token punctuation">;</span>
-
-<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token operator">NOT</span> <span class="token keyword">EXISTS</span> <span class="token identifier"><span class="token punctuation">`</span>Project<span class="token punctuation">`</span></span> <span class="token punctuation">(</span>
-    <span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span> <span class="token keyword">INT</span> <span class="token keyword">UNSIGNED</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">,</span>
-    <span class="token identifier"><span class="token punctuation">`</span>name<span class="token punctuation">`</span></span> <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    <span class="token identifier"><span class="token punctuation">`</span>description<span class="token punctuation">`</span></span> <span class="token keyword">TEXT</span><span class="token punctuation">,</span>
-    <span class="token identifier"><span class="token punctuation">`</span>ownerId<span class="token punctuation">`</span></span> <span class="token keyword">INT</span> <span class="token keyword">UNSIGNED</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    <span class="token identifier"><span class="token punctuation">`</span>teamId<span class="token punctuation">`</span></span> <span class="token keyword">INT</span> <span class="token keyword">UNSIGNED</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    <span class="token identifier"><span class="token punctuation">`</span>createdAt<span class="token punctuation">`</span></span> <span class="token keyword">DATETIME</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span><span class="token punctuation">,</span>
-    <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token keyword">UNIQUE</span> <span class="token keyword">INDEX</span> <span class="token identifier"><span class="token punctuation">`</span>name_UNIQUE<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>name<span class="token punctuation">`</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token keyword">INDEX</span> <span class="token identifier"><span class="token punctuation">`</span>ownerId_idx<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>ownerId<span class="token punctuation">`</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token keyword">CONSTRAINT</span> <span class="token identifier"><span class="token punctuation">`</span>fk_ownerId<span class="token punctuation">`</span></span>
-        <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>ownerId<span class="token punctuation">`</span></span><span class="token punctuation">)</span>
-            <span class="token keyword">REFERENCES</span> <span class="token identifier"><span class="token punctuation">`</span>User<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span><span class="token punctuation">)</span>
-            <span class="token keyword">ON</span> <span class="token keyword">DELETE</span> <span class="token keyword">NO</span> <span class="token keyword">ACTION</span>
-            <span class="token keyword">ON</span> <span class="token keyword">UPDATE</span> <span class="token keyword">CASCADE</span><span class="token punctuation">,</span>
-    <span class="token keyword">CONSTRAINT</span> <span class="token identifier"><span class="token punctuation">`</span>fk_teamId<span class="token punctuation">`</span></span>
-        <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>teamId<span class="token punctuation">`</span></span><span class="token punctuation">)</span>
-            <span class="token keyword">REFERENCES</span> <span class="token identifier"><span class="token punctuation">`</span>Team<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span><span class="token punctuation">)</span>
-            <span class="token keyword">ON</span> <span class="token keyword">DELETE</span> <span class="token keyword">NO</span> <span class="token keyword">ACTION</span>
-            <span class="token keyword">ON</span> <span class="token keyword">UPDATE</span> <span class="token keyword">NO</span> <span class="token keyword">ACTION</span>
-<span class="token punctuation">)</span> <span class="token keyword">ENGINE</span> <span class="token operator">=</span> <span class="token keyword">InnoDB</span><span class="token punctuation">;</span>
-
-<span class="token comment">-- -----------------------------------------------------</span>
-<span class="token comment">-- Table `mydb`.`Team`</span>
-<span class="token comment">-- -----------------------------------------------------</span>
-<span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> <span class="token identifier"><span class="token punctuation">`</span>mydb<span class="token punctuation">`</span></span><span class="token punctuation">.</span><span class="token identifier"><span class="token punctuation">`</span>Team<span class="token punctuation">`</span></span><span class="token punctuation">;</span>
-
-<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token operator">NOT</span> <span class="token keyword">EXISTS</span> <span class="token identifier"><span class="token punctuation">`</span>Team<span class="token punctuation">`</span></span> <span class="token punctuation">(</span>
-    <span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span> <span class="token keyword">INT</span> <span class="token keyword">UNSIGNED</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">,</span>
-    <span class="token identifier"><span class="token punctuation">`</span>createdAt<span class="token punctuation">`</span></span> <span class="token keyword">DATETIME</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span><span class="token punctuation">,</span>
-    <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span><span class="token punctuation">)</span>
-<span class="token punctuation">)</span> <span class="token keyword">ENGINE</span> <span class="token operator">=</span> <span class="token keyword">InnoDB</span><span class="token punctuation">;</span>
-
-<span class="token comment">-- -----------------------------------------------------</span>
-<span class="token comment">-- Table `mydb`.`Member`</span>
-<span class="token comment">-- -----------------------------------------------------</span>
-<span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> <span class="token identifier"><span class="token punctuation">`</span>mydb<span class="token punctuation">`</span></span><span class="token punctuation">.</span><span class="token identifier"><span class="token punctuation">`</span>Member<span class="token punctuation">`</span></span><span class="token punctuation">;</span>
-
-<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token operator">NOT</span> <span class="token keyword">EXISTS</span> <span class="token identifier"><span class="token punctuation">`</span>Member<span class="token punctuation">`</span></span> <span class="token punctuation">(</span>
-    <span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span> <span class="token keyword">INT</span> <span class="token keyword">UNSIGNED</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">,</span>
-    <span class="token identifier"><span class="token punctuation">`</span>userId<span class="token punctuation">`</span></span> <span class="token keyword">INT</span> <span class="token keyword">UNSIGNED</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    <span class="token identifier"><span class="token punctuation">`</span>teamId<span class="token punctuation">`</span></span> <span class="token keyword">INT</span> <span class="token keyword">UNSIGNED</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-    <span class="token identifier"><span class="token punctuation">`</span>teamRole<span class="token punctuation">`</span></span> <span class="token keyword">ENUM</span><span class="token punctuation">(</span><span class="token string">'Developer'</span><span class="token punctuation">,</span> <span class="token string">'Project Leader'</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token string">'Developer'</span><span class="token punctuation">,</span>
-    <span class="token identifier"><span class="token punctuation">`</span>joinedAt<span class="token punctuation">`</span></span> <span class="token keyword">DATETIME</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span><span class="token punctuation">,</span>
-    <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token keyword">INDEX</span> <span class="token identifier"><span class="token punctuation">`</span>userId_idx<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>userId<span class="token punctuation">`</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token keyword">INDEX</span> <span class="token identifier"><span class="token punctuation">`</span>teamId_idx<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>teamId<span class="token punctuation">`</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token keyword">CONSTRAINT</span> <span class="token identifier"><span class="token punctuation">`</span>fk_userId<span class="token punctuation">`</span></span>
-        <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>userId<span class="token punctuation">`</span></span><span class="token punctuation">)</span>
-            <span class="token keyword">REFERENCES</span> <span class="token identifier"><span class="token punctuation">`</span>User<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span><span class="token punctuation">)</span>
-            <span class="token keyword">ON</span> <span class="token keyword">DELETE</span> <span class="token keyword">CASCADE</span>
-            <span class="token keyword">ON</span> <span class="token keyword">UPDATE</span> <span class="token keyword">CASCADE</span><span class="token punctuation">,</span>
-    <span class="token keyword">CONSTRAINT</span> <span class="token identifier"><span class="token punctuation">`</span>fk_member_teamId<span class="token punctuation">`</span></span>
-        <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>teamId<span class="token punctuation">`</span></span><span class="token punctuation">)</span>
-            <span class="token keyword">REFERENCES</span> <span class="token identifier"><span class="token punctuation">`</span>Team<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span><span class="token punctuation">)</span>
-            <span class="token keyword">ON</span> <span class="token keyword">DELETE</span> <span class="token keyword">CASCADE</span>
-            <span class="token keyword">ON</span> <span class="token keyword">UPDATE</span> <span class="token keyword">CASCADE</span>
-<span class="token punctuation">)</span> <span class="token keyword">ENGINE</span> <span class="token operator">=</span> <span class="token keyword">InnoDB</span><span class="token punctuation">;</span>
-
-<span class="token comment">-- -----------------------------------------------------</span>
-<span class="token comment">-- Table `mydb`.`Task`</span>
-<span class="token comment">-- -----------------------------------------------------</span>
-<span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> <span class="token identifier"><span class="token punctuation">`</span>mydb<span class="token punctuation">`</span></span><span class="token punctuation">.</span><span class="token identifier"><span class="token punctuation">`</span>Task<span class="token punctuation">`</span></span><span class="token punctuation">;</span>
-
-<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token operator">NOT</span> <span class="token keyword">EXISTS</span> <span class="token identifier"><span class="token punctuation">`</span>Task<span class="token punctuation">`</span></span> <span class="token punctuation">(</span>
-  <span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span> <span class="token keyword">INT</span> <span class="token keyword">UNSIGNED</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">,</span>
-  <span class="token identifier"><span class="token punctuation">`</span>title<span class="token punctuation">`</span></span> <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-  <span class="token identifier"><span class="token punctuation">`</span>description<span class="token punctuation">`</span></span> <span class="token keyword">TEXT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-  <span class="token identifier"><span class="token punctuation">`</span>assignedTo<span class="token punctuation">`</span></span> <span class="token keyword">INT</span> <span class="token keyword">UNSIGNED</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-  <span class="token identifier"><span class="token punctuation">`</span>projectId<span class="token punctuation">`</span></span> <span class="token keyword">INT</span> <span class="token keyword">UNSIGNED</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-  <span class="token identifier"><span class="token punctuation">`</span>status<span class="token punctuation">`</span></span> <span class="token keyword">ENUM</span><span class="token punctuation">(</span><span class="token string">'PENDING'</span><span class="token punctuation">,</span> <span class="token string">'IN_PROGRESS'</span><span class="token punctuation">,</span> <span class="token string">'COMPLETED'</span><span class="token punctuation">,</span> <span class="token string">'ON_HOLD'</span><span class="token punctuation">,</span> <span class="token string">'CANCELLED'</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token string">'PENDING'</span><span class="token punctuation">,</span>
-  <span class="token identifier"><span class="token punctuation">`</span>priority<span class="token punctuation">`</span></span> <span class="token keyword">ENUM</span><span class="token punctuation">(</span><span class="token string">'LOW'</span><span class="token punctuation">,</span> <span class="token string">'MEDIUM'</span><span class="token punctuation">,</span> <span class="token string">'HIGH'</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token string">'MEDIUM'</span><span class="token punctuation">,</span>
-  <span class="token identifier"><span class="token punctuation">`</span>dueDate<span class="token punctuation">`</span></span> <span class="token keyword">DATETIME</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-  <span class="token identifier"><span class="token punctuation">`</span>createdAt<span class="token punctuation">`</span></span> <span class="token keyword">DATETIME</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span><span class="token punctuation">,</span>
-  <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-  <span class="token keyword">INDEX</span> <span class="token identifier"><span class="token punctuation">`</span>assignedTo_idx<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>assignedTo<span class="token punctuation">`</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-  <span class="token keyword">INDEX</span> <span class="token identifier"><span class="token punctuation">`</span>projectId_idx<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>projectId<span class="token punctuation">`</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-  <span class="token keyword">CONSTRAINT</span> <span class="token identifier"><span class="token punctuation">`</span>fk_assignedTo_user<span class="token punctuation">`</span></span>
-      <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>assignedTo<span class="token punctuation">`</span></span><span class="token punctuation">)</span>
-          <span class="token keyword">REFERENCES</span> <span class="token identifier"><span class="token punctuation">`</span>User<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span><span class="token punctuation">)</span>
-          <span class="token keyword">ON</span> <span class="token keyword">DELETE</span> <span class="token keyword">SET</span> <span class="token boolean">NULL</span>
-          <span class="token keyword">ON</span> <span class="token keyword">UPDATE</span> <span class="token keyword">CASCADE</span><span class="token punctuation">,</span>
-  <span class="token keyword">CONSTRAINT</span> <span class="token identifier"><span class="token punctuation">`</span>fk_projectId<span class="token punctuation">`</span></span>
-      <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>projectId<span class="token punctuation">`</span></span><span class="token punctuation">)</span>
-          <span class="token keyword">REFERENCES</span> <span class="token identifier"><span class="token punctuation">`</span>Project<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span><span class="token punctuation">)</span>
-          <span class="token keyword">ON</span> <span class="token keyword">DELETE</span> <span class="token keyword">CASCADE</span>
-          <span class="token keyword">ON</span> <span class="token keyword">UPDATE</span> <span class="token keyword">CASCADE</span>
-<span class="token punctuation">)</span> <span class="token keyword">ENGINE</span> <span class="token operator">=</span> <span class="token keyword">InnoDB</span><span class="token punctuation">;</span>
-
-<span class="token comment">-- -----------------------------------------------------</span>
-<span class="token comment">-- Table `mydb`.`Artefact`</span>
-<span class="token comment">-- -----------------------------------------------------</span>
-<span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> <span class="token identifier"><span class="token punctuation">`</span>mydb<span class="token punctuation">`</span></span><span class="token punctuation">.</span><span class="token identifier"><span class="token punctuation">`</span>Artefact<span class="token punctuation">`</span></span><span class="token punctuation">;</span>
-
-<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token operator">NOT</span> <span class="token keyword">EXISTS</span> <span class="token identifier"><span class="token punctuation">`</span>Artefact<span class="token punctuation">`</span></span> <span class="token punctuation">(</span>
-  <span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span> <span class="token keyword">INT</span> <span class="token keyword">UNSIGNED</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">,</span>
-  <span class="token identifier"><span class="token punctuation">`</span>title<span class="token punctuation">`</span></span> <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-  <span class="token identifier"><span class="token punctuation">`</span>description<span class="token punctuation">`</span></span> <span class="token keyword">TEXT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-  <span class="token identifier"><span class="token punctuation">`</span>filePath<span class="token punctuation">`</span></span> <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-  <span class="token identifier"><span class="token punctuation">`</span>fileType<span class="token punctuation">`</span></span> <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">45</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-  <span class="token identifier"><span class="token punctuation">`</span>uploadedBy<span class="token punctuation">`</span></span> <span class="token keyword">INT</span> <span class="token keyword">UNSIGNED</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-  <span class="token identifier"><span class="token punctuation">`</span>projectId<span class="token punctuation">`</span></span> <span class="token keyword">INT</span> <span class="token keyword">UNSIGNED</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-  <span class="token identifier"><span class="token punctuation">`</span>createdAt<span class="token punctuation">`</span></span> <span class="token keyword">DATETIME</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span><span class="token punctuation">,</span>
-  <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-  <span class="token keyword">INDEX</span> <span class="token identifier"><span class="token punctuation">`</span>projectId_idx<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>projectId<span class="token punctuation">`</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-  <span class="token keyword">CONSTRAINT</span> <span class="token identifier"><span class="token punctuation">`</span>fk_uploadedBy_user<span class="token punctuation">`</span></span>
-      <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>uploadedBy<span class="token punctuation">`</span></span><span class="token punctuation">)</span>
-          <span class="token keyword">REFERENCES</span> <span class="token identifier"><span class="token punctuation">`</span>User<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span><span class="token punctuation">)</span>
-          <span class="token keyword">ON</span> <span class="token keyword">DELETE</span> <span class="token keyword">NO</span> <span class="token keyword">ACTION</span>
-          <span class="token keyword">ON</span> <span class="token keyword">UPDATE</span> <span class="token keyword">NO</span> <span class="token keyword">ACTION</span><span class="token punctuation">,</span>
-  <span class="token keyword">CONSTRAINT</span> <span class="token identifier"><span class="token punctuation">`</span>fk_projectId_artefact<span class="token punctuation">`</span></span>
-      <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>projectId<span class="token punctuation">`</span></span><span class="token punctuation">)</span>
-          <span class="token keyword">REFERENCES</span> <span class="token identifier"><span class="token punctuation">`</span>Project<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span><span class="token punctuation">)</span>
-          <span class="token keyword">ON</span> <span class="token keyword">DELETE</span> <span class="token keyword">CASCADE</span>
-          <span class="token keyword">ON</span> <span class="token keyword">UPDATE</span> <span class="token keyword">CASCADE</span>
-<span class="token punctuation">)</span> <span class="token keyword">ENGINE</span> <span class="token operator">=</span> <span class="token keyword">InnoDB</span><span class="token punctuation">;</span>
-
-<span class="token comment">-- -----------------------------------------------------</span>
-<span class="token comment">-- Table `mydb`.`Grant`</span>
-<span class="token comment">-- -----------------------------------------------------</span>
-<span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> <span class="token identifier"><span class="token punctuation">`</span>mydb<span class="token punctuation">`</span></span><span class="token punctuation">.</span><span class="token identifier"><span class="token punctuation">`</span>Grant<span class="token punctuation">`</span></span><span class="token punctuation">;</span>
-
-<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token operator">NOT</span> <span class="token keyword">EXISTS</span> <span class="token identifier"><span class="token punctuation">`</span>Grant<span class="token punctuation">`</span></span> <span class="token punctuation">(</span>
-   <span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span> <span class="token keyword">INT</span> <span class="token keyword">UNSIGNED</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">,</span>
-   <span class="token identifier"><span class="token punctuation">`</span>projectId<span class="token punctuation">`</span></span> <span class="token keyword">INT</span> <span class="token keyword">UNSIGNED</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-   <span class="token identifier"><span class="token punctuation">`</span>userId<span class="token punctuation">`</span></span> <span class="token keyword">INT</span> <span class="token keyword">UNSIGNED</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-   <span class="token identifier"><span class="token punctuation">`</span>createdAt<span class="token punctuation">`</span></span> <span class="token keyword">DATETIME</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span><span class="token punctuation">,</span>
-   <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-   <span class="token keyword">INDEX</span> <span class="token identifier"><span class="token punctuation">`</span>projectId_idx<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>projectId<span class="token punctuation">`</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-   <span class="token keyword">INDEX</span> <span class="token identifier"><span class="token punctuation">`</span>userId_idx<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>userId<span class="token punctuation">`</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-   <span class="token keyword">CONSTRAINT</span> <span class="token identifier"><span class="token punctuation">`</span>fk_grant_project<span class="token punctuation">`</span></span>
-       <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>projectId<span class="token punctuation">`</span></span><span class="token punctuation">)</span>
-           <span class="token keyword">REFERENCES</span> <span class="token identifier"><span class="token punctuation">`</span>Project<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span><span class="token punctuation">)</span>
-           <span class="token keyword">ON</span> <span class="token keyword">DELETE</span> <span class="token keyword">CASCADE</span>
-           <span class="token keyword">ON</span> <span class="token keyword">UPDATE</span> <span class="token keyword">CASCADE</span><span class="token punctuation">,</span>
-   <span class="token keyword">CONSTRAINT</span> <span class="token identifier"><span class="token punctuation">`</span>fk_grant_user<span class="token punctuation">`</span></span>
-       <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>userId<span class="token punctuation">`</span></span><span class="token punctuation">)</span>
-           <span class="token keyword">REFERENCES</span> <span class="token identifier"><span class="token punctuation">`</span>User<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span><span class="token punctuation">)</span>
-           <span class="token keyword">ON</span> <span class="token keyword">DELETE</span> <span class="token keyword">CASCADE</span>
-           <span class="token keyword">ON</span> <span class="token keyword">UPDATE</span> <span class="token keyword">CASCADE</span>
-<span class="token punctuation">)</span> <span class="token keyword">ENGINE</span> <span class="token operator">=</span> <span class="token keyword">InnoDB</span><span class="token punctuation">;</span>
-
-<span class="token comment">-- Filling the tables with data</span>
-<span class="token keyword">START</span> <span class="token keyword">TRANSACTION</span><span class="token punctuation">;</span>
-
-<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>Role<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>name<span class="token punctuation">`</span></span><span class="token punctuation">)</span> <span class="token keyword">VALUES</span>
-<span class="token punctuation">(</span><span class="token string">'Admin'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">(</span><span class="token string">'Developer'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">(</span><span class="token string">'Manager'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>User<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>username<span class="token punctuation">`</span></span><span class="token punctuation">,</span> <span class="token identifier"><span class="token punctuation">`</span>email<span class="token punctuation">`</span></span><span class="token punctuation">,</span> <span class="token identifier"><span class="token punctuation">`</span>password<span class="token punctuation">`</span></span><span class="token punctuation">,</span> <span class="token identifier"><span class="token punctuation">`</span>roleId<span class="token punctuation">`</span></span><span class="token punctuation">,</span> <span class="token identifier"><span class="token punctuation">`</span>status<span class="token punctuation">`</span></span><span class="token punctuation">)</span> <span class="token keyword">VALUES</span>
-<span class="token punctuation">(</span><span class="token string">'john_doe'</span><span class="token punctuation">,</span> <span class="token string">'john.doe@example.com'</span><span class="token punctuation">,</span> <span class="token string">'password123'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'ACTIVE'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">(</span><span class="token string">'jane_smith'</span><span class="token punctuation">,</span> <span class="token string">'jane.smith@example.com'</span><span class="token punctuation">,</span> <span class="token string">'password123'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'ACTIVE'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">(</span><span class="token string">'alex_williams'</span><span class="token punctuation">,</span> <span class="token string">'alex.williams@example.com'</span><span class="token punctuation">,</span> <span class="token string">'password123'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'ACTIVE'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">(</span><span class="token string">'michael_brown'</span><span class="token punctuation">,</span> <span class="token string">'michael.brown@example.com'</span><span class="token punctuation">,</span> <span class="token string">'password123'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'BANNED'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>Team<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">VALUES</span>
-<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>Member<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>userId<span class="token punctuation">`</span></span><span class="token punctuation">,</span> <span class="token identifier"><span class="token punctuation">`</span>teamId<span class="token punctuation">`</span></span><span class="token punctuation">,</span> <span class="token identifier"><span class="token punctuation">`</span>teamRole<span class="token punctuation">`</span></span><span class="token punctuation">)</span> <span class="token keyword">VALUES</span>
-<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'Project Leader'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'Developer'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'Developer'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'Developer'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>Project<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>name<span class="token punctuation">`</span></span><span class="token punctuation">,</span> <span class="token identifier"><span class="token punctuation">`</span>description<span class="token punctuation">`</span></span><span class="token punctuation">,</span> <span class="token identifier"><span class="token punctuation">`</span>ownerId<span class="token punctuation">`</span></span><span class="token punctuation">,</span> <span class="token identifier"><span class="token punctuation">`</span>teamId<span class="token punctuation">`</span></span><span class="token punctuation">)</span> <span class="token keyword">VALUES</span>
-<span class="token punctuation">(</span><span class="token string">'Project A'</span><span class="token punctuation">,</span> <span class="token string">'Description for Project A'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">(</span><span class="token string">'Project B'</span><span class="token punctuation">,</span> <span class="token string">'Description for Project B'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">(</span><span class="token string">'Project C'</span><span class="token punctuation">,</span> <span class="token string">'Description for Project C'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>Task<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>title<span class="token punctuation">`</span></span><span class="token punctuation">,</span> <span class="token identifier"><span class="token punctuation">`</span>description<span class="token punctuation">`</span></span><span class="token punctuation">,</span> <span class="token identifier"><span class="token punctuation">`</span>assignedTo<span class="token punctuation">`</span></span><span class="token punctuation">,</span> <span class="token identifier"><span class="token punctuation">`</span>projectId<span class="token punctuation">`</span></span><span class="token punctuation">,</span> <span class="token identifier"><span class="token punctuation">`</span>status<span class="token punctuation">`</span></span><span class="token punctuation">,</span> <span class="token identifier"><span class="token punctuation">`</span>priority<span class="token punctuation">`</span></span><span class="token punctuation">,</span> <span class="token identifier"><span class="token punctuation">`</span>dueDate<span class="token punctuation">`</span></span><span class="token punctuation">)</span> <span class="token keyword">VALUES</span>
-<span class="token punctuation">(</span><span class="token string">'Task 1 for Project A'</span><span class="token punctuation">,</span> <span class="token string">'Task 1 description'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'PENDING'</span><span class="token punctuation">,</span> <span class="token string">'HIGH'</span><span class="token punctuation">,</span> <span class="token string">'2024-11-20 10:00:00'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">(</span><span class="token string">'Task 2 for Project A'</span><span class="token punctuation">,</span> <span class="token string">'Task 2 description'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'IN_PROGRESS'</span><span class="token punctuation">,</span> <span class="token string">'MEDIUM'</span><span class="token punctuation">,</span> <span class="token string">'2024-11-25 12:00:00'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">(</span><span class="token string">'Task 1 for Project B'</span><span class="token punctuation">,</span> <span class="token string">'Task 1 description'</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'PENDING'</span><span class="token punctuation">,</span> <span class="token string">'LOW'</span><span class="token punctuation">,</span> <span class="token string">'2024-11-22 09:00:00'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">(</span><span class="token string">'Task 1 for Project C'</span><span class="token punctuation">,</span> <span class="token string">'Task 1 description'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'COMPLETED'</span><span class="token punctuation">,</span> <span class="token string">'HIGH'</span><span class="token punctuation">,</span> <span class="token string">'2024-11-15 16:00:00'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>Artefact<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>title<span class="token punctuation">`</span></span><span class="token punctuation">,</span> <span class="token identifier"><span class="token punctuation">`</span>description<span class="token punctuation">`</span></span><span class="token punctuation">,</span> <span class="token identifier"><span class="token punctuation">`</span>filePath<span class="token punctuation">`</span></span><span class="token punctuation">,</span> <span class="token identifier"><span class="token punctuation">`</span>fileType<span class="token punctuation">`</span></span><span class="token punctuation">,</span> <span class="token identifier"><span class="token punctuation">`</span>uploadedBy<span class="token punctuation">`</span></span><span class="token punctuation">,</span> <span class="token identifier"><span class="token punctuation">`</span>projectId<span class="token punctuation">`</span></span><span class="token punctuation">)</span> <span class="token keyword">VALUES</span>
-<span class="token punctuation">(</span><span class="token string">'Artefact 1 for Project A'</span><span class="token punctuation">,</span> <span class="token string">'Initial design file'</span><span class="token punctuation">,</span> <span class="token string">'/files/project_a/design_v1.pdf'</span><span class="token punctuation">,</span> <span class="token string">'PDF'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">(</span><span class="token string">'Artefact 2 for Project B'</span><span class="token punctuation">,</span> <span class="token string">'Final report for Project B'</span><span class="token punctuation">,</span> <span class="token string">'/files/project_b/report_final.pdf'</span><span class="token punctuation">,</span> <span class="token string">'PDF'</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">(</span><span class="token string">'Artefact 1 for Project C'</span><span class="token punctuation">,</span> <span class="token string">'Codebase for Project C'</span><span class="token punctuation">,</span> <span class="token string">'/files/project_c/code.zip'</span><span class="token punctuation">,</span> <span class="token string">'ZIP'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token identifier"><span class="token punctuation">`</span>Grant<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>projectId<span class="token punctuation">`</span></span><span class="token punctuation">,</span> <span class="token identifier"><span class="token punctuation">`</span>userId<span class="token punctuation">`</span></span><span class="token punctuation">)</span> <span class="token keyword">VALUES</span>
-<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">COMMIT</span><span class="token punctuation">;</span>
-</code></pre></div><h2 id="restfull-сервіс-для-управління-даними"><a href="#restfull-сервіс-для-управління-даними" class="header-anchor">#</a> RESTfull сервіс для управління даними</h2> <h3 id="connection"><a href="#connection" class="header-anchor">#</a> Connection</h3> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span>'express'<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> mysql <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token char">'mysql2'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> bodyParser <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span>'body<span class="token operator">-</span>parser'<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> port <span class="token operator">=</span> <span class="token number">3000</span><span class="token punctuation">;</span>
-
-app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>bodyParser<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">const</span> db <span class="token operator">=</span> mysql<span class="token punctuation">.</span><span class="token function">createConnection</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    host<span class="token operator">:</span> 'localhost'<span class="token punctuation">,</span>
-    user<span class="token operator">:</span> <span class="token char">'root'</span><span class="token punctuation">,</span>
-    password<span class="token operator">:</span> <span class="token char">'***'</span><span class="token punctuation">,</span>
-    database<span class="token operator">:</span> <span class="token char">'mydb'</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-db<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>'<span class="token class-name">Error</span> connecting <span class="token keyword">to</span> <span class="token namespace">database</span><span class="token operator">:</span>'<span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>'<span class="token class-name">Connection</span> <span class="token keyword">to</span> <span class="token namespace">database</span> successful<span class="token operator">!</span>'<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre></div><h3 id="user-entity"><a href="#user-entity" class="header-anchor">#</a> User Entity</h3> <div class="language-java extra-class"><pre class="language-java"><code>app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token char">'/users'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> query <span class="token operator">=</span> '<span class="token constant">SELECT</span> <span class="token operator">*</span> <span class="token constant">FROM</span> <span class="token class-name">User</span>'<span class="token punctuation">;</span>
-    db<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span>query<span class="token punctuation">,</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> results<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>'<span class="token class-name">Request</span> execution error<span class="token operator">:</span>'<span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> error<span class="token operator">:</span> '<span class="token class-name">Server</span> error' <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span>results<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>'<span class="token operator">/</span>users<span class="token operator">/</span><span class="token operator">:</span>id'<span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> userId <span class="token operator">=</span> req<span class="token punctuation">.</span>params<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
-    <span class="token keyword">const</span> query <span class="token operator">=</span> '<span class="token constant">SELECT</span> <span class="token operator">*</span> <span class="token constant">FROM</span> <span class="token class-name">User</span> <span class="token class-name">WHERE</span> id <span class="token operator">=</span> <span class="token operator">?</span>'<span class="token punctuation">;</span>
-    db<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span>query<span class="token punctuation">,</span> <span class="token punctuation">[</span>userId<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> results<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>'<span class="token class-name">Request</span> execution error<span class="token operator">:</span>'<span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> error<span class="token operator">:</span> '<span class="token class-name">Server</span> error' <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>results<span class="token punctuation">.</span>length <span class="token operator">==</span><span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">404</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> error<span class="token operator">:</span> '<span class="token class-name">User</span> not found' <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span>results<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-app<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token char">'/users'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> <span class="token punctuation">{</span> username<span class="token punctuation">,</span> email<span class="token punctuation">,</span> password<span class="token punctuation">,</span> roleId<span class="token punctuation">,</span> status <span class="token punctuation">}</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
-    <span class="token keyword">const</span> query <span class="token operator">=</span> '<span class="token constant">INSERT</span> <span class="token constant">INTO</span> <span class="token class-name">User</span> <span class="token punctuation">(</span>username<span class="token punctuation">,</span> email<span class="token punctuation">,</span> password<span class="token punctuation">,</span> roleId<span class="token punctuation">,</span> status<span class="token punctuation">)</span> <span class="token constant">VALUES</span> <span class="token punctuation">(</span><span class="token operator">?</span><span class="token punctuation">,</span> <span class="token operator">?</span><span class="token punctuation">,</span> <span class="token operator">?</span><span class="token punctuation">,</span> <span class="token operator">?</span><span class="token punctuation">,</span> <span class="token operator">?</span><span class="token punctuation">)</span>'<span class="token punctuation">;</span>
-    db<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span>query<span class="token punctuation">,</span> <span class="token punctuation">[</span>username<span class="token punctuation">,</span> email<span class="token punctuation">,</span> password<span class="token punctuation">,</span> roleId<span class="token punctuation">,</span> status<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> result<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>'<span class="token class-name">Request</span> execution error<span class="token operator">:</span>'<span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> error<span class="token operator">:</span> '<span class="token class-name">Server</span> error' <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">201</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> message<span class="token operator">:</span> '<span class="token class-name">User</span> created'<span class="token punctuation">,</span> userId<span class="token operator">:</span> result<span class="token punctuation">.</span>insertId <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-app<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>'<span class="token operator">/</span>users<span class="token operator">/</span><span class="token operator">:</span>id'<span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> <span class="token punctuation">{</span> id <span class="token punctuation">}</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>params<span class="token punctuation">;</span>
-    <span class="token keyword">const</span> <span class="token punctuation">{</span> username<span class="token punctuation">,</span> email<span class="token punctuation">,</span> password<span class="token punctuation">,</span> roleId<span class="token punctuation">,</span> status <span class="token punctuation">}</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
-    <span class="token keyword">const</span> query <span class="token operator">=</span> '<span class="token constant">UPDATE</span> <span class="token class-name">User</span> <span class="token class-name">SET</span> username <span class="token operator">=</span> <span class="token operator">?</span><span class="token punctuation">,</span> email <span class="token operator">=</span> <span class="token operator">?</span><span class="token punctuation">,</span> password <span class="token operator">=</span> <span class="token operator">?</span><span class="token punctuation">,</span> roleId <span class="token operator">=</span> <span class="token operator">?</span><span class="token punctuation">,</span> status <span class="token operator">=</span> <span class="token operator">?</span> <span class="token class-name">WHERE</span> id <span class="token operator">=</span> <span class="token operator">?</span>'<span class="token punctuation">;</span>
-    db<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span>query<span class="token punctuation">,</span> <span class="token punctuation">[</span>username<span class="token punctuation">,</span> email<span class="token punctuation">,</span> password<span class="token punctuation">,</span> roleId<span class="token punctuation">,</span> status<span class="token punctuation">,</span> id<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> result<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>'<span class="token class-name">Request</span> execution error<span class="token operator">:</span>'<span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> error<span class="token operator">:</span> '<span class="token class-name">Server</span> error' <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> message<span class="token operator">:</span> '<span class="token class-name">User</span> updated' <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-app<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>'<span class="token operator">/</span>users<span class="token operator">/</span><span class="token operator">:</span>id'<span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> <span class="token punctuation">{</span> id <span class="token punctuation">}</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>params<span class="token punctuation">;</span>
-    <span class="token keyword">const</span> query <span class="token operator">=</span> '<span class="token constant">DELETE</span> <span class="token constant">FROM</span> <span class="token class-name">User</span> <span class="token class-name">WHERE</span> id <span class="token operator">=</span> <span class="token operator">?</span>'<span class="token punctuation">;</span>
-    db<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span>query<span class="token punctuation">,</span> <span class="token punctuation">[</span>id<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> result<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>'<span class="token class-name">Request</span> execution error<span class="token operator">:</span>'<span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> error<span class="token operator">:</span> '<span class="token class-name">Server</span> error' <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> message<span class="token operator">:</span> '<span class="token class-name">User</span> deleted' <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre></div><h3 id="role-entity"><a href="#role-entity" class="header-anchor">#</a> Role Entity</h3> <div class="language-java extra-class"><pre class="language-java"><code>app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token char">'/roles'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> query <span class="token operator">=</span> '<span class="token constant">SELECT</span> <span class="token operator">*</span> <span class="token constant">FROM</span> <span class="token class-name">Role</span>'<span class="token punctuation">;</span>
-    db<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span>query<span class="token punctuation">,</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> results<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>'<span class="token class-name">Request</span> execution error<span class="token operator">:</span>'<span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> error<span class="token operator">:</span> '<span class="token class-name">Server</span> error' <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span>results<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<!DOCTYPE HTML>
+<html lang="uk" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Реалізація інформаційного та програмного забезпечення - Курсова робота з предмету &quot;Бази даних&quot;: Система управління проєктами</title>
 
 
-app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>'<span class="token operator">/</span>roles<span class="token operator">/</span><span class="token operator">:</span>id'<span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> roleId <span class="token operator">=</span> req<span class="token punctuation">.</span>params<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
-    <span class="token keyword">const</span> query <span class="token operator">=</span> '<span class="token constant">SELECT</span> <span class="token operator">*</span> <span class="token constant">FROM</span> <span class="token class-name">Role</span> <span class="token class-name">WHERE</span> id <span class="token operator">=</span> <span class="token operator">?</span>'<span class="token punctuation">;</span>
-    db<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span>query<span class="token punctuation">,</span> <span class="token punctuation">[</span>roleId<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> results<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>'<span class="token class-name">Request</span> execution error<span class="token operator">:</span>'<span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> error<span class="token operator">:</span> '<span class="token class-name">Server</span> error' <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>results<span class="token punctuation">.</span>length <span class="token operator">==</span><span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">404</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> error<span class="token operator">:</span> '<span class="token class-name">Role</span> not found' <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span>results<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <!-- Custom HTML head -->
 
-app<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token char">'/roles'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> <span class="token punctuation">{</span> name <span class="token punctuation">}</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
-    <span class="token keyword">const</span> query <span class="token operator">=</span> '<span class="token constant">INSERT</span> <span class="token constant">INTO</span> <span class="token class-name">Role</span> <span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token constant">VALUES</span> <span class="token punctuation">(</span><span class="token operator">?</span><span class="token punctuation">)</span>'<span class="token punctuation">;</span>
-    db<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span>query<span class="token punctuation">,</span> <span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> result<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>'<span class="token class-name">Request</span> execution error<span class="token operator">:</span>'<span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> error<span class="token operator">:</span> '<span class="token class-name">Server</span> error' <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">201</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> message<span class="token operator">:</span> '<span class="token class-name">Role</span> created'<span class="token punctuation">,</span> roleId<span class="token operator">:</span> result<span class="token punctuation">.</span>insertId <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
 
-app<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>'<span class="token operator">/</span>roles<span class="token operator">/</span><span class="token operator">:</span>id'<span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> <span class="token punctuation">{</span> id <span class="token punctuation">}</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>params<span class="token punctuation">;</span>
-    <span class="token keyword">const</span> <span class="token punctuation">{</span> name <span class="token punctuation">}</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
 
-    <span class="token keyword">const</span> query <span class="token operator">=</span> '<span class="token constant">UPDATE</span> <span class="token class-name">Role</span> <span class="token class-name">SET</span> name <span class="token operator">=</span> <span class="token operator">?</span> <span class="token class-name">WHERE</span> id <span class="token operator">=</span> <span class="token operator">?</span>'<span class="token punctuation">;</span>
-    db<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span>query<span class="token punctuation">,</span> <span class="token punctuation">[</span>name<span class="token punctuation">,</span> id<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> result<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>'<span class="token class-name">Request</span> execution error<span class="token operator">:</span>'<span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> error<span class="token operator">:</span> '<span class="token class-name">Server</span> error' <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
 
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>result<span class="token punctuation">.</span>affectedRows <span class="token operator">==</span><span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">404</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> error<span class="token operator">:</span> '<span class="token class-name">Role</span> not found' <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
-        res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> message<span class="token operator">:</span> '<span class="token class-name">Role</span> updated' <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <!-- Custom theme stylesheets -->
 
-app<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>'<span class="token operator">/</span>roles<span class="token operator">/</span><span class="token operator">:</span>id'<span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> <span class="token punctuation">{</span> id <span class="token punctuation">}</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>params<span class="token punctuation">;</span>
-    <span class="token keyword">const</span> query <span class="token operator">=</span> '<span class="token constant">DELETE</span> <span class="token constant">FROM</span> <span class="token class-name">Role</span> <span class="token class-name">WHERE</span> id <span class="token operator">=</span> <span class="token operator">?</span>'<span class="token punctuation">;</span>
-    db<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span>query<span class="token punctuation">,</span> <span class="token punctuation">[</span>id<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> result<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>'<span class="token class-name">Request</span> execution error<span class="token operator">:</span>'<span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> error<span class="token operator">:</span> '<span class="token class-name">Server</span> error' <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> message<span class="token operator">:</span> '<span class="token class-name">Role</span> deleted' <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre></div><h3 id="member-entity"><a href="#member-entity" class="header-anchor">#</a> Member Entity</h3> <div class="language-java extra-class"><pre class="language-java"><code>app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>'<span class="token operator">/</span>members'<span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> query <span class="token operator">=</span> '<span class="token constant">SELECT</span> <span class="token operator">*</span> <span class="token constant">FROM</span> <span class="token class-name">Member</span>'<span class="token punctuation">;</span>
-    db<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span>query<span class="token punctuation">,</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> results<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>'<span class="token class-name">Request</span> execution error<span class="token operator">:</span>'<span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> error<span class="token operator">:</span> '<span class="token class-name">Server</span> error' <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span>results<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>'<span class="token operator">/</span>members<span class="token operator">/</span><span class="token operator">:</span>id'<span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> memberId <span class="token operator">=</span> req<span class="token punctuation">.</span>params<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
-    <span class="token keyword">const</span> query <span class="token operator">=</span> '<span class="token constant">SELECT</span> <span class="token operator">*</span> <span class="token constant">FROM</span> <span class="token class-name">Member</span> <span class="token class-name">WHERE</span> id <span class="token operator">=</span> <span class="token operator">?</span>'<span class="token punctuation">;</span>
-    db<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span>query<span class="token punctuation">,</span> <span class="token punctuation">[</span>memberId<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> results<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>'<span class="token class-name">Request</span> execution error<span class="token operator">:</span>'<span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> error<span class="token operator">:</span> '<span class="token class-name">Server</span> error' <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>results<span class="token punctuation">.</span>length <span class="token operator">==</span><span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">404</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> error<span class="token operator">:</span> '<span class="token class-name">Member</span> not found' <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span>results<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
 
-app<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span>'<span class="token operator">/</span>members'<span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> <span class="token punctuation">{</span> userId<span class="token punctuation">,</span> teamId<span class="token punctuation">,</span> teamRole <span class="token punctuation">}</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
-    <span class="token keyword">const</span> query <span class="token operator">=</span> '<span class="token constant">INSERT</span> <span class="token constant">INTO</span> <span class="token class-name">Member</span> <span class="token punctuation">(</span>userId<span class="token punctuation">,</span> teamId<span class="token punctuation">,</span> teamRole<span class="token punctuation">)</span> <span class="token constant">VALUES</span> <span class="token punctuation">(</span><span class="token operator">?</span><span class="token punctuation">,</span> <span class="token operator">?</span><span class="token punctuation">,</span> <span class="token operator">?</span><span class="token punctuation">)</span>'<span class="token punctuation">;</span>
-    db<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span>query<span class="token punctuation">,</span> <span class="token punctuation">[</span>userId<span class="token punctuation">,</span> teamId<span class="token punctuation">,</span> teamRole<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> result<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>'<span class="token class-name">Request</span> execution error<span class="token operator">:</span>'<span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> error<span class="token operator">:</span> '<span class="token class-name">Server</span> error' <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">201</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> message<span class="token operator">:</span> '<span class="token class-name">Member</span> added'<span class="token punctuation">,</span> memberId<span class="token operator">:</span> result<span class="token punctuation">.</span>insertId <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
 
-app<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>'<span class="token operator">/</span>members<span class="token operator">/</span><span class="token operator">:</span>id'<span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> <span class="token punctuation">{</span> id <span class="token punctuation">}</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>params<span class="token punctuation">;</span>
-    <span class="token keyword">const</span> <span class="token punctuation">{</span> userId<span class="token punctuation">,</span> teamId<span class="token punctuation">,</span> teamRole <span class="token punctuation">}</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
-    <span class="token keyword">const</span> query <span class="token operator">=</span> '<span class="token constant">UPDATE</span> <span class="token class-name">Member</span> <span class="token class-name">SET</span> userId <span class="token operator">=</span> <span class="token operator">?</span><span class="token punctuation">,</span> teamId <span class="token operator">=</span> <span class="token operator">?</span><span class="token punctuation">,</span> teamRole <span class="token operator">=</span> <span class="token operator">?</span> <span class="token class-name">WHERE</span> id <span class="token operator">=</span> <span class="token operator">?</span>'<span class="token punctuation">;</span>
-    db<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span>query<span class="token punctuation">,</span> <span class="token punctuation">[</span>userId<span class="token punctuation">,</span> teamId<span class="token punctuation">,</span> teamRole<span class="token punctuation">,</span> id<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> result<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>'<span class="token class-name">Request</span> execution error<span class="token operator">:</span>'<span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> error<span class="token operator">:</span> '<span class="token class-name">Server</span> error' <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
 
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>result<span class="token punctuation">.</span>affectedRows <span class="token operator">==</span><span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">404</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> error<span class="token operator">:</span> '<span class="token class-name">Member</span> not found' <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
 
-        res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> message<span class="token operator">:</span> '<span class="token class-name">Member</span> updated' <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
-app<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>'<span class="token operator">/</span>members<span class="token operator">/</span><span class="token operator">:</span>id'<span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> <span class="token punctuation">{</span> id <span class="token punctuation">}</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>params<span class="token punctuation">;</span>
-    <span class="token keyword">const</span> query <span class="token operator">=</span> '<span class="token constant">DELETE</span> <span class="token constant">FROM</span> <span class="token class-name">Member</span> <span class="token class-name">WHERE</span> id <span class="token operator">=</span> <span class="token operator">?</span>'<span class="token punctuation">;</span>
-    db<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span>query<span class="token punctuation">,</span> <span class="token punctuation">[</span>id<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> result<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>'<span class="token class-name">Request</span> execution error<span class="token operator">:</span>'<span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> error<span class="token operator">:</span> '<span class="token class-name">Server</span> error' <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> message<span class="token operator">:</span> '<span class="token class-name">Member</span> removed' <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
 
-app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span>port<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>`<span class="token class-name">The</span> server is running on http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>localhost<span class="token operator">:</span>$<span class="token punctuation">{</span>port<span class="token punctuation">}</span>`<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
 
-</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
-    <script src="/assets/js/app.16b6df24.js" defer></script><script src="/assets/js/2.79c8b5da.js" defer></script><script src="/assets/js/1.2502fb65.js" defer></script><script src="/assets/js/31.51c088ab.js" defer></script>
-  </body>
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Курсова робота з предмету &quot;Бази даних&quot;: Система управління проєктами</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="Реалізація-інформаційного-та-програмного-забезпечення"><a class="header" href="#Реалізація-інформаційного-та-програмного-забезпечення">Реалізація інформаційного та програмного забезпечення</a></h1>
+<h2 id="sql-скрипт-для-створення-на-початкового-наповнення-бази-даних"><a class="header" href="#sql-скрипт-для-створення-на-початкового-наповнення-бази-даних">SQL-скрипт для створення на початкового наповнення бази даних</a></h2>
+<pre><code class="language-sql">-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+DROP SCHEMA IF EXISTS `mydb` ;
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8mb4 ;
+USE `mydb` ;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Role`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`User` ;
+
+CREATE TABLE IF NOT EXISTS `User` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
+  `roleId` INT UNSIGNED NOT NULL,
+  `status` ENUM('ACTIVE', 'BANNED') NOT NULL DEFAULT 'ACTIVE',
+  `createdAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `email_UNIQUE` (`email`),
+  INDEX `roleId_idx` (`roleId`),
+  CONSTRAINT `fk_roleId`
+      FOREIGN KEY (`roleId`)
+          REFERENCES `Role` (`id`)
+          ON DELETE NO ACTION
+          ON UPDATE NO ACTION
+) ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Role`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`Role` ;
+
+CREATE TABLE IF NOT EXISTS `Role` (
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(45) NOT NULL,
+    PRIMARY KEY (`id`),
+    UNIQUE INDEX `idRole_UNIQUE` (`id`),
+    UNIQUE INDEX `name_UNIQUE` (`name`)
+) ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Project`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`Project`;
+
+CREATE TABLE IF NOT EXISTS `Project` (
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(100) NOT NULL,
+    `description` TEXT,
+    `ownerId` INT UNSIGNED NOT NULL,
+    `teamId` INT UNSIGNED NOT NULL,
+    `createdAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`),
+    UNIQUE INDEX `name_UNIQUE` (`name`),
+    INDEX `ownerId_idx` (`ownerId`),
+    CONSTRAINT `fk_ownerId`
+        FOREIGN KEY (`ownerId`)
+            REFERENCES `User` (`id`)
+            ON DELETE NO ACTION
+            ON UPDATE CASCADE,
+    CONSTRAINT `fk_teamId`
+        FOREIGN KEY (`teamId`)
+            REFERENCES `Team` (`id`)
+            ON DELETE NO ACTION
+            ON UPDATE NO ACTION
+) ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Team`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`Team`;
+
+CREATE TABLE IF NOT EXISTS `Team` (
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `createdAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Member`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`Member`;
+
+CREATE TABLE IF NOT EXISTS `Member` (
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `userId` INT UNSIGNED NOT NULL,
+    `teamId` INT UNSIGNED NOT NULL,
+    `teamRole` ENUM('Developer', 'Project Leader') NOT NULL DEFAULT 'Developer',
+    `joinedAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`),
+    INDEX `userId_idx` (`userId`),
+    INDEX `teamId_idx` (`teamId`),
+    CONSTRAINT `fk_userId`
+        FOREIGN KEY (`userId`)
+            REFERENCES `User` (`id`)
+            ON DELETE CASCADE
+            ON UPDATE CASCADE,
+    CONSTRAINT `fk_member_teamId`
+        FOREIGN KEY (`teamId`)
+            REFERENCES `Team` (`id`)
+            ON DELETE CASCADE
+            ON UPDATE CASCADE
+) ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Task`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`Task`;
+
+CREATE TABLE IF NOT EXISTS `Task` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(100) NOT NULL,
+  `description` TEXT NULL,
+  `assignedTo` INT UNSIGNED DEFAULT NULL,
+  `projectId` INT UNSIGNED NOT NULL,
+  `status` ENUM('PENDING', 'IN_PROGRESS', 'COMPLETED', 'ON_HOLD', 'CANCELLED') NOT NULL DEFAULT 'PENDING',
+  `priority` ENUM('LOW', 'MEDIUM', 'HIGH') NOT NULL DEFAULT 'MEDIUM',
+  `dueDate` DATETIME NULL,
+  `createdAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  INDEX `assignedTo_idx` (`assignedTo`),
+  INDEX `projectId_idx` (`projectId`),
+  CONSTRAINT `fk_assignedTo_user`
+      FOREIGN KEY (`assignedTo`)
+          REFERENCES `User` (`id`)
+          ON DELETE SET NULL
+          ON UPDATE CASCADE,
+  CONSTRAINT `fk_projectId`
+      FOREIGN KEY (`projectId`)
+          REFERENCES `Project` (`id`)
+          ON DELETE CASCADE
+          ON UPDATE CASCADE
+) ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Artefact`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`Artefact`;
+
+CREATE TABLE IF NOT EXISTS `Artefact` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(100) NOT NULL,
+  `description` TEXT NULL,
+  `filePath` VARCHAR(255) NOT NULL,
+  `fileType` VARCHAR(45) NOT NULL,
+  `uploadedBy` INT UNSIGNED NOT NULL,
+  `projectId` INT UNSIGNED NOT NULL,
+  `createdAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  INDEX `projectId_idx` (`projectId`),
+  CONSTRAINT `fk_uploadedBy_user`
+      FOREIGN KEY (`uploadedBy`)
+          REFERENCES `User` (`id`)
+          ON DELETE NO ACTION
+          ON UPDATE NO ACTION,
+  CONSTRAINT `fk_projectId_artefact`
+      FOREIGN KEY (`projectId`)
+          REFERENCES `Project` (`id`)
+          ON DELETE CASCADE
+          ON UPDATE CASCADE
+) ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Grant`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`Grant`;
+
+CREATE TABLE IF NOT EXISTS `Grant` (
+   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+   `projectId` INT UNSIGNED NOT NULL,
+   `userId` INT UNSIGNED NOT NULL,
+   `createdAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   PRIMARY KEY (`id`),
+   INDEX `projectId_idx` (`projectId`),
+   INDEX `userId_idx` (`userId`),
+   CONSTRAINT `fk_grant_project`
+       FOREIGN KEY (`projectId`)
+           REFERENCES `Project` (`id`)
+           ON DELETE CASCADE
+           ON UPDATE CASCADE,
+   CONSTRAINT `fk_grant_user`
+       FOREIGN KEY (`userId`)
+           REFERENCES `User` (`id`)
+           ON DELETE CASCADE
+           ON UPDATE CASCADE
+) ENGINE = InnoDB;
+
+-- Filling the tables with data
+START TRANSACTION;
+
+INSERT INTO `Role` (`name`) VALUES
+('Admin'),
+('Developer'),
+('Manager');
+
+INSERT INTO `User` (`username`, `email`, `password`, `roleId`, `status`) VALUES
+('john_doe', 'john.doe@example.com', 'password123', 1, 'ACTIVE'),
+('jane_smith', 'jane.smith@example.com', 'password123', 2, 'ACTIVE'),
+('alex_williams', 'alex.williams@example.com', 'password123', 3, 'ACTIVE'),
+('michael_brown', 'michael.brown@example.com', 'password123', 2, 'BANNED');
+
+INSERT INTO `Team` () VALUES
+(),
+(),
+(),
+();
+
+INSERT INTO `Member` (`userId`, `teamId`, `teamRole`) VALUES
+(1, 1, 'Project Leader'),
+(2, 1, 'Developer'),
+(3, 2, 'Developer'),
+(4, 3, 'Developer');
+
+INSERT INTO `Project` (`name`, `description`, `ownerId`, `teamId`) VALUES
+('Project A', 'Description for Project A', 1, 1),
+('Project B', 'Description for Project B', 3, 2),
+('Project C', 'Description for Project C', 1, 3);
+
+INSERT INTO `Task` (`title`, `description`, `assignedTo`, `projectId`, `status`, `priority`, `dueDate`) VALUES
+('Task 1 for Project A', 'Task 1 description', 2, 1, 'PENDING', 'HIGH', '2024-11-20 10:00:00'),
+('Task 2 for Project A', 'Task 2 description', 3, 1, 'IN_PROGRESS', 'MEDIUM', '2024-11-25 12:00:00'),
+('Task 1 for Project B', 'Task 1 description', 4, 2, 'PENDING', 'LOW', '2024-11-22 09:00:00'),
+('Task 1 for Project C', 'Task 1 description', 2, 3, 'COMPLETED', 'HIGH', '2024-11-15 16:00:00');
+
+INSERT INTO `Artefact` (`title`, `description`, `filePath`, `fileType`, `uploadedBy`, `projectId`) VALUES
+('Artefact 1 for Project A', 'Initial design file', '/files/project_a/design_v1.pdf', 'PDF', 2, 1),
+('Artefact 2 for Project B', 'Final report for Project B', '/files/project_b/report_final.pdf', 'PDF', 4, 2),
+('Artefact 1 for Project C', 'Codebase for Project C', '/files/project_c/code.zip', 'ZIP', 2, 3);
+
+INSERT INTO `Grant` (`projectId`, `userId`) VALUES
+(1, 2),
+(1, 3),
+(2, 4);
+
+COMMIT;
+</code></pre>
+<h2 id="restfull-сервіс-для-управління-даними"><a class="header" href="#restfull-сервіс-для-управління-даними">RESTfull сервіс для управління даними</a></h2>
+<h3 id="connection"><a class="header" href="#connection">Connection</a></h3>
+<pre><code class="language-java">const express = require('express');
+const mysql = require('mysql2');
+const bodyParser = require('body-parser');
+
+const app = express();
+const port = 3000;
+
+app.use(bodyParser.json());
+
+const db = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '***',
+    database: 'mydb',
+});
+
+db.connect((err) =&gt; {
+    if (err) {
+        console.error('Error connecting to database:', err);
+        return;
+    }
+    console.log('Connection to database successful!');
+});
+</code></pre>
+<h3 id="user-entity"><a class="header" href="#user-entity">User Entity</a></h3>
+<pre><code class="language-java">app.get('/users', (req, res) =&gt; {
+    const query = 'SELECT * FROM User';
+    db.query(query, (err, results) =&gt; {
+        if (err) {
+            console.error('Request execution error:', err);
+            res.status(500).json({ error: 'Server error' });
+        } else {
+            res.json(results);
+        }
+    });
+});
+app.get('/users/:id', (req, res) =&gt; {
+    const userId = req.params.id;
+    const query = 'SELECT * FROM User WHERE id = ?';
+    db.query(query, [userId], (err, results) =&gt; {
+        if (err) {
+            console.error('Request execution error:', err);
+            res.status(500).json({ error: 'Server error' });
+        } else if (results.length === 0) {
+            res.status(404).json({ error: 'User not found' });
+        } else {
+            res.json(results[0]);
+        }
+    });
+});
+
+app.post('/users', (req, res) =&gt; {
+    const { username, email, password, roleId, status } = req.body;
+    const query = 'INSERT INTO User (username, email, password, roleId, status) VALUES (?, ?, ?, ?, ?)';
+    db.query(query, [username, email, password, roleId, status], (err, result) =&gt; {
+        if (err) {
+            console.error('Request execution error:', err);
+            res.status(500).json({ error: 'Server error' });
+        } else {
+            res.status(201).json({ message: 'User created', userId: result.insertId });
+        }
+    });
+});
+
+app.put('/users/:id', (req, res) =&gt; {
+    const { id } = req.params;
+    const { username, email, password, roleId, status } = req.body;
+    const query = 'UPDATE User SET username = ?, email = ?, password = ?, roleId = ?, status = ? WHERE id = ?';
+    db.query(query, [username, email, password, roleId, status, id], (err, result) =&gt; {
+        if (err) {
+            console.error('Request execution error:', err);
+            res.status(500).json({ error: 'Server error' });
+        } else {
+            res.json({ message: 'User updated' });
+        }
+    });
+});
+
+app.delete('/users/:id', (req, res) =&gt; {
+    const { id } = req.params;
+    const query = 'DELETE FROM User WHERE id = ?';
+    db.query(query, [id], (err, result) =&gt; {
+        if (err) {
+            console.error('Request execution error:', err);
+            res.status(500).json({ error: 'Server error' });
+        } else {
+            res.json({ message: 'User deleted' });
+        }
+    });
+});
+</code></pre>
+<h3 id="role-entity"><a class="header" href="#role-entity">Role Entity</a></h3>
+<pre><code class="language-java">app.get('/roles', (req, res) =&gt; {
+    const query = 'SELECT * FROM Role';
+    db.query(query, (err, results) =&gt; {
+        if (err) {
+            console.error('Request execution error:', err);
+            res.status(500).json({ error: 'Server error' });
+        } else {
+            res.json(results);
+        }
+    });
+});
+
+
+app.get('/roles/:id', (req, res) =&gt; {
+    const roleId = req.params.id;
+    const query = 'SELECT * FROM Role WHERE id = ?';
+    db.query(query, [roleId], (err, results) =&gt; {
+        if (err) {
+            console.error('Request execution error:', err);
+            res.status(500).json({ error: 'Server error' });
+        } else if (results.length === 0) {
+            res.status(404).json({ error: 'Role not found' });
+        } else {
+            res.json(results[0]);
+        }
+    });
+});
+
+app.post('/roles', (req, res) =&gt; {
+    const { name } = req.body;
+    const query = 'INSERT INTO Role (name) VALUES (?)';
+    db.query(query, [name], (err, result) =&gt; {
+        if (err) {
+            console.error('Request execution error:', err);
+            res.status(500).json({ error: 'Server error' });
+        } else {
+            res.status(201).json({ message: 'Role created', roleId: result.insertId });
+        }
+    });
+});
+
+app.put('/roles/:id', (req, res) =&gt; {
+    const { id } = req.params;
+    const { name } = req.body;
+
+    const query = 'UPDATE Role SET name = ? WHERE id = ?';
+    db.query(query, [name, id], (err, result) =&gt; {
+        if (err) {
+            console.error('Request execution error:', err);
+            return res.status(500).json({ error: 'Server error' });
+        }
+
+        if (result.affectedRows === 0) {
+            return res.status(404).json({ error: 'Role not found' });
+        }
+
+        res.json({ message: 'Role updated' });
+    });
+});
+
+app.delete('/roles/:id', (req, res) =&gt; {
+    const { id } = req.params;
+    const query = 'DELETE FROM Role WHERE id = ?';
+    db.query(query, [id], (err, result) =&gt; {
+        if (err) {
+            console.error('Request execution error:', err);
+            res.status(500).json({ error: 'Server error' });
+        } else {
+            res.json({ message: 'Role deleted' });
+        }
+    });
+});
+</code></pre>
+<h3 id="member-entity"><a class="header" href="#member-entity">Member Entity</a></h3>
+<pre><code class="language-java">app.get('/members', (req, res) =&gt; {
+    const query = 'SELECT * FROM Member';
+    db.query(query, (err, results) =&gt; {
+        if (err) {
+            console.error('Request execution error:', err);
+            res.status(500).json({ error: 'Server error' });
+        } else {
+            res.json(results);
+        }
+    });
+});
+
+app.get('/members/:id', (req, res) =&gt; {
+    const memberId = req.params.id;
+    const query = 'SELECT * FROM Member WHERE id = ?';
+    db.query(query, [memberId], (err, results) =&gt; {
+        if (err) {
+            console.error('Request execution error:', err);
+            res.status(500).json({ error: 'Server error' });
+        } else if (results.length === 0) {
+            res.status(404).json({ error: 'Member not found' });
+        } else {
+            res.json(results[0]);
+        }
+    });
+});
+
+app.post('/members', (req, res) =&gt; {
+    const { userId, teamId, teamRole } = req.body;
+    const query = 'INSERT INTO Member (userId, teamId, teamRole) VALUES (?, ?, ?)';
+    db.query(query, [userId, teamId, teamRole], (err, result) =&gt; {
+        if (err) {
+            console.error('Request execution error:', err);
+            res.status(500).json({ error: 'Server error' });
+        } else {
+            res.status(201).json({ message: 'Member added', memberId: result.insertId });
+        }
+    });
+});
+
+app.put('/members/:id', (req, res) =&gt; {
+    const { id } = req.params;
+    const { userId, teamId, teamRole } = req.body;
+    const query = 'UPDATE Member SET userId = ?, teamId = ?, teamRole = ? WHERE id = ?';
+    db.query(query, [userId, teamId, teamRole, id], (err, result) =&gt; {
+        if (err) {
+            console.error('Request execution error:', err);
+            return res.status(500).json({ error: 'Server error' });
+        }
+
+        if (result.affectedRows === 0) {
+            return res.status(404).json({ error: 'Member not found' });
+        }
+
+        res.json({ message: 'Member updated' });
+    });
+});
+
+app.delete('/members/:id', (req, res) =&gt; {
+    const { id } = req.params;
+    const query = 'DELETE FROM Member WHERE id = ?';
+    db.query(query, [id], (err, result) =&gt; {
+        if (err) {
+            console.error('Request execution error:', err);
+            res.status(500).json({ error: 'Server error' });
+        } else {
+            res.json({ message: 'Member removed' });
+        }
+    });
+});
+
+app.listen(port, () =&gt; {
+    console.log(`The server is running on http://localhost:${port}`);
+});
+
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../project/design.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../project/test.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../project/design.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../project/test.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
 </html>
